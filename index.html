@@ -3,34 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAE Initiative | Official</title>
+    <title>DAE Initiative Official</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 50px 20px; }
-        .logo { width: 150px; border-radius: 50%; border: 3px solid #fbbf24; box-shadow: 0 0 15px #fbbf24; }
-        h1 { color: #fbbf24; margin-top: 20px; }
-        .btn-container { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        .btn { padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; color: white; min-width: 180px; }
-        .btn-x { background: #1DA1F2; }
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; text-align: center; padding: 40px; margin: 0; }
+        .container { max-width: 600px; margin: auto; }
+        .logo { width: 150px; height: 150px; border-radius: 50%; border: 3px solid #fbbf24; box-shadow: 0 0 20px #fbbf24; margin-bottom: 20px; }
+        h1 { color: #fbbf24; letter-spacing: 2px; }
+        p { color: #ccc; line-height: 1.6; }
+        .btn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
+        .btn { padding: 15px; text-decoration: none; border-radius: 8px; font-weight: bold; color: #fff; transition: 0.3s; }
+        .btn:hover { opacity: 0.8; transform: scale(1.05); }
+        .btn-x { background: #000; border: 1px solid #fff; }
         .btn-tg { background: #0088cc; }
         .btn-li { background: #0077b5; }
-        .btn-os { background: #2081E2; }
+        .btn-os { background: #2081e2; }
+        .contract { margin-top: 40px; padding: 15px; border: 1px solid #333; border-radius: 10px; background: #111; }
+        code { color: #fbbf24; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo" class="logo">
-    <h1>DAE INITIATIVE</h1>
-    <p>Hybrid Gaming ecosystem on Polygon. Bridging Web2 and Web3.</p>
-    
-    <div class="btn-container">
-        <a href="https://x.com/denis_de84848" class="btn btn-x" target="_blank">Follow on X</a>
-        <a href="https://t.me/daeinitiative" class="btn btn-tg" target="_blank">Join Telegram</a>
-        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="btn btn-li" target="_blank">Founder LinkedIn</a>
-        <a href="https://opensea.io/" class="btn btn-os" target="_blank">OpenSea Collection</a>
-    </div>
+    <div class="container">
+        <img src="logo.png" alt="DAE Logo" class="logo">
+        <h1>DAE INITIATIVE</h1>
+        <p>Hybrid Gaming Ecosystem on Polygon Network. Bridging the gap between players and digital ownership.</p>
+        
+        <div class="btn-grid">
+            <a href="https://x.com/denis_de84848" class="btn btn-x" target="_blank">Twitter / X</a>
+            <a href="https://t.me/daeinitiative" class="btn btn-tg" target="_blank">Telegram</a>
+            <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="btn btn-li" target="_blank">Founder</a>
+            <a href="https://opensea.io/" class="btn btn-os" target="_blank">OpenSea</a>
+        </div>
 
-    <div style="margin-top: 40px; padding: 20px; border: 1px dashed #fbbf24; display: inline-block;">
-        <strong>Contract Address (Polygon):</strong><br>
-        <code>0xf5d098ce7a673f0c179b7c310972b08333f98b1b</code>
+        <div class="contract">
+            <strong>Polygon Contract:</strong><br>
+            <code>0xf5d098ce7a673f0c179b7c310972b08333f98b1b</code>
+        </div>
     </div>
 </body>
 </html>
