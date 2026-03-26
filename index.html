@@ -3,101 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAE Initiative | Official Website</title>
+    <title>DAE Initiative | Official</title>
     <style>
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .container {
-            text-align: center;
-            padding: 20px;
-            max-width: 800px;
-        }
-        .logo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid #fbbf24;
-            box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: #fbbf24;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #cccccc;
-            margin-bottom: 30px;
-        }
-        .links-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .btn {
-            display: block;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: transform 0.2s, background-color 0.2s;
-            text-align: center;
-        }
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-        .btn-x { background-color: #1DA1F2; color: white; }
-        .btn-tg { background-color: #0088cc; color: white; }
-        .btn-li { background-color: #0077b5; color: white; }
-        .btn-os { background-color: #2081E2; color: white; }
-        
-        footer {
-            margin-top: 50px;
-            font-size: 0.8rem;
-            color: #666666;
-        }
+        body { background-color: #000; color: #fff; font-family: sans-serif; text-align: center; padding: 50px 20px; }
+        .logo { width: 150px; border-radius: 50%; border: 3px solid #fbbf24; box-shadow: 0 0 15px #fbbf24; }
+        h1 { color: #fbbf24; margin-top: 20px; }
+        .btn-container { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .btn { padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; color: white; min-width: 180px; }
+        .btn-x { background: #1DA1F2; }
+        .btn-tg { background: #0088cc; }
+        .btn-li { background: #0077b5; }
+        .btn-os { background: #2081E2; }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <img src="logo.png" alt="DAE Initiative Logo" class="logo">
-        
-        <h1>DAE INITIATIVE</h1>
-        
-        <p>
-            DAE Initiative is a Hybrid Gaming ecosystem on the Polygon network, bridging the gap between Web2 and Web3. 
-            Join us as we redefine digital asset ownership and create a transparent token economy.
-        </p>
-
-        <div class="links-container">
-            <a href="https://x.com/denis_de84848" class="btn btn-x" target="_blank">Follow on X</a>
-            <a href="https://t.me/daeinitiative" class="btn btn-tg" target="_blank">Join Telegram</a>
-            <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="btn btn-li" target="_blank">Founder LinkedIn</a>
-            <a href="https://opensea.io/" class="btn btn-os" target="_blank">OpenSea Collection</a>
-        </div>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>DAE INITIATIVE</h1>
+    <p>Hybrid Gaming ecosystem on Polygon. Bridging Web2 and Web3.</p>
+    
+    <div class="btn-container">
+        <a href="https://x.com/denis_de84848" class="btn btn-x" target="_blank">Follow on X</a>
+        <a href="https://t.me/daeinitiative" class="btn btn-tg" target="_blank">Join Telegram</a>
+        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="btn btn-li" target="_blank">Founder LinkedIn</a>
+        <a href="https://opensea.io/" class="btn btn-os" target="_blank">OpenSea Collection</a>
     </div>
 
-    <footer>
-        &copy; 2024 DAE Initiative. All rights reserved.
-    </footer>
-
+    <div style="margin-top: 40px; padding: 20px; border: 1px dashed #fbbf24; display: inline-block;">
+        <strong>Contract Address (Polygon):</strong><br>
+        <code>0xf5d098ce7a673f0c179b7c310972b08333f98b1b</code>
+    </div>
 </body>
 </html>
