@@ -3,74 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAE Initiative | Hybrid Gaming Ecosystem</title>
+    <title>DAE Initiative | Official Website</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #e0e0e0; max-width: 900px; margin: 0 auto; padding: 20px; background: #0f172a; }
-        header { text-align: center; padding: 60px 0; background: linear-gradient(135px, #1e293b 0%, #334155 100%); border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
-        .content { background: #1e293b; padding: 40px; margin-top: 20px; border-radius: 15px; border: 1px solid #334155; }
-        h1 { color: #818cf8; margin: 0; font-size: 2.5em; }
-        h2 { color: #fbbf24; border-bottom: 2px solid #4f46e5; padding-bottom: 10px; margin-top: 30px; }
-        .status-badge { display: inline-block; background: #c2410c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 20px; }
-        .token-box { background: #0f172a; padding: 20px; border-left: 4px solid #818cf8; border-radius: 8px; word-break: break-all; margin: 20px 0; }
-        .btn { display: inline-block; padding: 12px 25px; text-decoration: none; border-radius: 8px; margin: 10px 5px; font-weight: bold; transition: transform 0.2s; color: white; text-align: center; min-width: 150px; }
-        .btn:hover { transform: translateY(-3px); }
-        .btn-x { background: #000000; }
-        .btn-tg { background: #0088cc; }
-        .btn-li { background: #0077b5; }
-        .btn-os { background: #2081e2; }
-        .founder-section { display: flex; align-items: center; gap: 20px; background: #334155; padding: 20px; border-radius: 10px; margin-top: 20px; }
-        .footer { text-align: center; margin-top: 50px; color: #94a3b8; font-size: 0.9em; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #fbbf24;
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #fbbf24;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+        .links-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .btn {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+        .btn-x { background-color: #1DA1F2; color: white; }
+        .btn-tg { background-color: #0088cc; color: white; }
+        .btn-li { background-color: #0077b5; color: white; }
+        .btn-os { background-color: #2081E2; color: white; }
+        
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #666666;
+        }
     </style>
 </head>
 <body>
- <div style="text-align: center; padding-top: 30px;">
-    <img src="logo.png" alt="DAE Logo" style="width: 150px; height: 150px; border-radius: 50%; border: 3px solid #fbbf24; box-shadow: 0 0 20px rgba(251, 191, 36, 0.6);">
-</div>   
-    <header>
-        <div class="status-badge">PROJECT PHASE: PRE-LAUNCH & COMMUNITY BUILDING</div>
-        <h1>DAE Initiative</h1>
-        <p>The Future of Hybrid Gaming on Polygon Network</p>
-    </header>
 
-    <div class="content">
-        <h2>Vision: Hybrid Gaming</h2>
-        <p>DAE Initiative is bridging the gap between traditional gaming and Web3. We are building an ecosystem where digital assets have real-world value, powered by the $DAE token. Our focus is on seamless integration, high-quality gameplay, and true ownership.</p>
+    <div class="container">
+        <img src="logo.png" alt="DAE Initiative Logo" class="logo">
         
-        <h2>Token Utility</h2>
-        <ul>
-            <li><strong>In-game Currency:</strong> Use $DAE for items and upgrades.</li>
-            <li><strong>Governance:</strong> Holders vote on future game developments.</li>
-            <li><strong>Rewards:</strong> Earn $DAE through skilled gameplay (Play-to-Earn).</li>
-        </ul>
-
-        <div class="token-box">
-            <strong>Contract Address (Polygon):</strong><br>
-            0xf5d098ce7a673f0c179b7c310972b08333f98b1b
-        </div>
-
-        <h2>Join Our Community</h2>
-        <p>Be part of the journey from day one. Early supporters will be eligible for future airdrops and whitelist spots.</p>
+        <h1>DAE INITIATIVE</h1>
         
-        <div style="text-align: center;">
+        <p>
+            DAE Initiative is a Hybrid Gaming ecosystem on the Polygon network, bridging the gap between Web2 and Web3. 
+            Join us as we redefine digital asset ownership and create a transparent token economy.
+        </p>
+
+        <div class="links-container">
             <a href="https://x.com/denis_de84848" class="btn btn-x" target="_blank">Follow on X</a>
-            <a href="https://t.me/DAE_Initiative" class="btn btn-tg" target="_blank">Join Telegram</a>
+            <a href="https://t.me/daeinitiative" class="btn btn-tg" target="_blank">Join Telegram</a>
             <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="btn btn-li" target="_blank">Founder LinkedIn</a>
             <a href="https://opensea.io/" class="btn btn-os" target="_blank">OpenSea Collection</a>
         </div>
-
-        <h2>The Founder</h2>
-        <div class="founder-section">
-            <div>
-                <strong>Denis Nicolae</strong><br>
-                <em>Solo Founder & Lead Visionary</em>
-                <p style="margin: 5px 0 0 0; font-size: 0.9em;">"Building a transparent, community-driven ecosystem for the next generation of gamers."</p>
-            </div>
-        </div>
     </div>
 
-    <div class="footer">
-        &copy; 2026 DAE Initiative. Powered by Polygon. <br>
-        Contact: <a href="mailto:contact@daeinitiative.com" style="color: #818cf8;">contact@daeinitiative.com</a>
-    </div>
+    <footer>
+        &copy; 2024 DAE Initiative. All rights reserved.
+    </footer>
+
 </body>
 </html>
