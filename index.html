@@ -1,48 +1,37 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAE INITIATIVE - Official Site</title>
     <style>
         body { background-color: #1a1a1a; color: white; font-family: 'Inter', sans-serif; margin: 0; padding: 0; }
-        
-        /* Navigarea de sus din poza ta */
         .header { background: #000; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
-        .logo-section { display: flex; align-items: center; gap: 15px; font-weight: bold; letter-spacing: 2px; }
-        .nav-links { display: flex; gap: 20px; font-size: 0.8rem; color: #bbb; }
-
-        /* Butoanele din stânga (X, TG, IN, OS) */
+        .logo-section { display: flex; align-items: center; gap: 15px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; }
+        .logo-img { width: 40px; height: 40px; object-fit: contain; }
+        .nav-links { display: flex; gap: 20px; font-size: 0.8rem; color: #bbb; font-weight: bold; }
         .sidebar { position: fixed; left: 15px; top: 30%; display: flex; flex-direction: column; gap: 12px; }
-        .side-btn { background: #333; border: 1px solid #444; color: white; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; border-radius: 4px; cursor: pointer; }
-
+        .side-btn { background: #333; border: 1px solid #444; color: white; width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; border-radius: 4px; }
         .main-content { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-
-        /* Cardurile tale cu marginea aurie la stânga */
-        h2 { color: #FFD700; font-size: 1.1rem; margin-top: 40px; letter-spacing: 1px; }
-        .custom-card { background: #000; border-radius: 12px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #FFD700; position: relative; }
-        
+        h2 { color: #FFD700; font-size: 1.1rem; margin-top: 40px; letter-spacing: 1px; text-transform: uppercase; }
+        .custom-card { background: #000; border-radius: 12px; padding: 25px; margin-bottom: 20px; border-left: 4px solid #FFD700; }
         .token-box { background: #0a0a0a; border: 1px solid #222; padding: 30px; text-align: center; border-radius: 10px; }
         .network-label { color: #FFD700; font-size: 0.7rem; display: block; margin-bottom: 5px; }
         .network-value { font-size: 1.5rem; font-weight: bold; }
-
         .roadmap-phase { margin-bottom: 15px; }
-        .roadmap-phase strong { display: block; color: #fff; margin-bottom: 5px; }
+        .roadmap-phase strong { display: block; color: #fff; margin-bottom: 5px; font-size: 1.1rem; }
         .roadmap-phase span { color: #888; font-size: 0.9rem; }
-
-        /* Formularul de Whitelist - integrat curat */
-        .whitelist-section { background: #000; border: 2px solid #FFD700; border-radius: 15px; padding: 35px; text-align: center; margin-top: 50px; box-shadow: 0 0 20px rgba(255,215,0,0.1); }
-        .whitelist-section h3 { color: #FFD700; margin-top: 0; }
-        input { width: 80%; padding: 12px; margin: 15px 0; background: #111; border: 1px solid #333; color: #FFD700; border-radius: 6px; outline: none; }
-        .btn-submit { width: 85%; padding: 15px; background: #FFD700; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-submit:hover { background: #e6c200; }
+        .whitelist-section { background: #000; border: 2px solid #FFD700; border-radius: 15px; padding: 35px; text-align: center; margin-top: 50px; }
+        .whitelist-section h3 { color: #FFD700; margin-top: 0; text-transform: uppercase; }
+        input { width: 80%; padding: 15px; margin: 15px 0; background: #111; border: 1px solid #333; color: #FFD700; border-radius: 6px; font-family: monospace; }
+        .btn-submit { width: 85%; padding: 18px; background: #FFD700; color: #000; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div class="header">
         <div class="logo-section">
-            <div style="width: 30px; height: 30px; background: #FFD700; border-radius: 50%;"></div>
+            <img src="logo.png" alt="DAE" class="logo-img">
             DAE INITIATIVE
         </div>
         <div class="nav-links">
@@ -86,7 +75,7 @@
 
         <div class="whitelist-section">
             <h3>🚀 JOIN THE AIRDROP WHITELIST</h3>
-            <p style="font-size: 0.9rem; color: #ccc;">Introdu adresa de portofel pentru a te înscrie în lista DAE:</p>
+            <p style="font-size: 0.9rem; color: #ccc;">Enter your Polygon wallet address to join the DAE whitelist:</p>
             <form action="https://formspree.io/f/xreoqoaw" method="POST">
                 <input type="text" name="wallet_address" placeholder="Polygon Address (0x...)" required>
                 <button type="submit" class="btn-submit">SECURE MY SPOT</button>
