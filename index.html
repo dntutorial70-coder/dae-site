@@ -1,158 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAE Initiative Official</title>
+    <title>DAE Initiative | Official Whitelist</title>
     <style>
-        :root {
-            --primary: #fbbf24;
-            --bg-dark: #080808;
-            --card-bg: rgba(15, 15, 15, 0.85);
-            --border: rgba(251, 191, 36, 0.15);
-        }
-
-        body { 
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://googleusercontent.com/image_generation_content/content/image_20.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff; 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding-top: 80px;
-        }
-
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            height: 80px;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 40px;
-            z-index: 1000;
-        }
-
-        .header-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-        .header-logo img { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--primary); }
-        .header-logo h1 { color: #fff; font-size: 1.2rem; margin: 0; letter-spacing: 2px; }
-
-        nav { display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #aaa; font-size: 0.8rem; text-transform: uppercase; font-weight: bold; }
-
-        .sticky-social {
-            position: fixed;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 999;
-        }
-
-        .sticky-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        body {
+            background-color: #000;
             color: #fff;
-            text-decoration: none;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        header {
+            padding: 50px 0;
+            border-bottom: 1px solid #333;
+        }
+        .logo {
+            font-size: 3rem;
             font-weight: bold;
+            color: #FFD700;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+        .hero-text {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* SECȚIUNEA AIRDROP / WHITELIST */
+        .whitelist-box {
+            background: #0a0a0a;
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid #FFD700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            margin: 50px auto;
+            max-width: 600px;
+        }
+        h2 {
+            color: #FFD700;
+            text-transform: uppercase;
+        }
+        input[type="text"], input[type="email"] {
+            width: 90%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #111;
+            color: #FFD700;
+            font-family: monospace;
+        }
+        button {
+            width: 95%;
+            padding: 18px;
+            background: linear-gradient(45deg, #FFD700, #b8860b);
+            border: none;
+            border-radius: 8px;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 15px;
             transition: 0.3s;
         }
-
-        .sticky-social a:hover { background: var(--primary); color: #000; }
-
-        .main-container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 25px; padding: 20px; }
-
-        .section-card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid var(--border);
-            text-align: left;
-            backdrop-filter: blur(10px);
+        button:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 15px #FFD700;
         }
-
-        .section-header { margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 10px; }
-        .section-header h2 { color: var(--primary); font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; margin: 0; }
-
-        /* TOKENOMICS CURĂȚAT */
-        .tokenomics-single { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
-        .tokenomics-single label { color: var(--primary); font-size: 0.7rem; font-weight: bold; text-transform: uppercase; display: block; }
-        .tokenomics-single span { font-size: 1.2rem; font-weight: bold; margin-top: 5px; display: block; }
-
-        .roadmap-item { background: rgba(255,255,255,0.02); padding: 15px; border-radius: 10px; margin-bottom: 10px; border-left: 3px solid var(--primary); }
-        .roadmap-item h3 { margin: 0; font-size: 0.9rem; }
-        .roadmap-item p { margin: 5px 0 0; color: #aaa; font-size: 0.8rem; }
-
-        .contract-box { padding: 15px; background: #000; border: 1px dashed rgba(255,255,255,0.2); border-radius: 8px; margin-top: 10px; }
-        code { color: var(--primary); font-size: 0.75rem; word-break: break-all; }
+        footer {
+            margin-top: 50px;
+            padding: 30px;
+            font-size: 0.8rem;
+            color: #555;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="header-logo">
-            <img src="logo.png" alt="DAE">
-            <h1>DAE INITIATIVE</h1>
-        </a>
-        <nav>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#roadmap">Roadmap</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="container">
+        <header>
+            <div class="logo">DAE INITIATIVE</div>
+            <p class="hero-text">The next generation of Hybrid Gaming on Polygon. Community driven, transparent, and built for the players.</p>
+        </header>
 
-    <div class="sticky-social">
-        <a href="https://x.com/denis_de84848" target="_blank">X</a>
-        <a href="https://t.me/daeinitiative" target="_blank">TG</a>
-        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" target="_blank">IN</a>
-        <a href="https://opensea.io/" target="_blank">OS</a>
-    </div>
+        <section class="whitelist-box">
+            <h2>🚀 Join the Airdrop Whitelist</h2>
+            <p>Register your wallet address to receive $DAE tokens at launch.</p>
+            
+            <form action="https://formspree.io/f/xreoqoaw" method="POST">
+                <label style="display:block; text-align:left; margin-left: 5%; color:#FFD700;">Polygon Address:</label>
+                <input type="text" name="Wallet_Address" placeholder="0x..." required>
+                
+                <label style="display:block; text-align:left; margin-left: 5%; color:#FFD700; margin-top:10px;">Email (Optional):</label>
+                <input type="email" name="Email" placeholder="your@email.com">
+                
+                <button type="submit">SECURE MY SPOT</button>
+            </form>
+            
+            <p style="font-size: 0.7rem; margin-top: 15px; color: #777;">*First 500 pioneers only. Be ready for the moon.</p>
+        </section>
 
-    <div class="main-container">
-        <div class="section-card" id="tokenomics">
-            <div class="section-header"><h2>Tokenomics</h2></div>
-            <div class="tokenomics-single">
-                <label>Network</label>
-                <span>Polygon (MATIC)</span>
-            </div>
-        </div>
-
-        <div class="section-card" id="roadmap">
-            <div class="section-header"><h2>Roadmap</h2></div>
-            <div class="roadmap-item">
-                <h3>Phase 01 - Genesis</h3>
-                <p>Deploying technical core on Polygon and building community.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Phase 02 - NFT Integration</h3>
-                <p>Launching digital assets and governance systems.</p>
-            </div>
-            <div class="roadmap-item">
-                <h3>Phase 03 - Ecosystem</h3>
-                <p>Strategic partnerships and gaming utility integration.</p>
-            </div>
-        </div>
-
-        <div class="section-card" id="contact">
-            <div class="section-header"><h2>Official Contract</h2></div>
-            <div class="contract-box">
-                <code>0xf5d098ce7a673f0c179b7c310972b08333f98b1b</code>
-            </div>
-        </div>
+        <footer>
+            &copy; 2026 DAE Initiative. Built on Polygon.
+        </footer>
     </div>
 
 </body>
 </html>
-
