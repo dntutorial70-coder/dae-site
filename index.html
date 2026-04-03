@@ -3,218 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAEL PROJECT - Digital Asset Exchange Layer</title>
+    <title>DAEL PROJECT - New Token Era</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --dark-grey: #1a1b1f; 
-            --charcoal: #050505; 
-            --gold: #d4af37; 
-            --gold-light: #f1e4b9; 
-            --neon-blue: #00f2ff; 
-            --text-white: #ffffff;
-            --card-grey: rgba(20, 20, 25, 0.9); 
+            --bg-dark: #0b1118;
+            --panel-grey: #1e2329;
+            --gold: #d4af37;
+            --neon-blue: #00f2ff;
+            --text-grey: #99a1a9;
         }
 
-        body { 
-            font-family: 'Segoe UI', Tahoma, sans-serif; 
-            margin: 0; 
-            background: radial-gradient(circle, var(--dark-grey) 0%, var(--charcoal) 100%); 
-            color: var(--text-white); 
-            text-align: center; 
-            scroll-behavior: smooth;
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            background-color: var(--bg-dark);
+            /* Fundal cu efect de circuite (gradient simulat) */
+            background-image: radial-gradient(circle at 50% 50%, #16202a 0%, #0b1118 100%);
+            color: white;
+            line-height: 1.6;
         }
 
-        /* Navigația care face butoanele să meargă (Anchor Links) */
+        /* Top Bar - Logo & Title */
+        .top-header {
+            display: flex;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0,0,0,0.3);
+        }
+        .top-header img { width: 50px; margin-right: 15px; }
+        .top-header h2 { color: var(--gold); margin: 0; letter-spacing: 3px; font-weight: 300; }
+
+        /* Navigația stil imagine */
         nav {
-            background: rgba(0, 0, 0, 0.9);
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--gold);
+            background: var(--panel-grey);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 30px;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
         nav a {
-            color: var(--gold);
+            color: var(--text-grey);
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
+            font-size: 0.75rem;
             font-weight: bold;
-        }
-
-        /* Header */
-        header { 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding-top: 80px;
-        }
-        
-        .main-logo { 
-            width: 250px; 
-            filter: drop-shadow(0 0 30px var(--neon-blue)); 
-            margin-bottom: 20px;
-        }
-
-        h1 { font-size: 3rem; color: var(--gold); letter-spacing: 5px; text-transform: uppercase; margin: 10px; }
-
-        /* Buton stilizat */
-        .btn { 
-            padding: 15px 35px; 
-            background: var(--gold); 
-            color: black; 
-            text-decoration: none; 
-            font-weight: bold; 
-            border-radius: 50px; 
-            display: inline-block;
-            margin-top: 20px;
-            box-shadow: 0 0 15px var(--gold);
-            border: none;
-            cursor: pointer;
-        }
-
-        /* Secțiuni */
-        section { padding: 100px 20px; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid #222; }
-        h2 { color: var(--gold); text-transform: uppercase; border-bottom: 2px solid var(--neon-blue); display: inline-block; padding-bottom: 10px; margin-bottom: 40px; }
-
-        /* Carduri Tokenomics (DIN CODUL TĂU) */
-        .card-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
-        .card { 
-            background: var(--card-grey); 
-            padding: 30px; 
-            width: 250px; 
-            border: 1px solid #333; 
+            text-transform: uppercase;
             transition: 0.3s;
         }
-        .card:hover { border-color: var(--neon-blue); transform: translateY(-5px); }
-        .card i { font-size: 40px; color: var(--gold); margin-bottom: 15px; }
+        nav a:hover { color: var(--gold); }
 
-        /* Roadmap (DIN CODUL TĂU) */
-        .roadmap-container { text-align: left; margin-top: 40px; }
-        .roadmap-phase { border-left: 3px solid var(--neon-blue); padding-left: 20px; margin-bottom: 30px; position: relative; }
-        .roadmap-phase::before { content: ''; width: 15px; height: 15px; background: var(--neon-blue); border-radius: 50%; position: absolute; left: -9px; top: 0; }
+        /* Hero Section - Două coloane ca în poză */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        /* Contract Box */
-        .contract-box { background: rgba(0,0,0,0.8); padding: 30px; border: 1px solid var(--gold); border-radius: 10px; margin-top: 20px; }
-        code { color: var(--neon-blue); font-size: 1.1rem; word-break: break-all; display: block; margin: 20px 0; }
+        .hero-left { flex: 1; min-width: 300px; text-align: left; }
+        .hero-left p { color: var(--gold); font-weight: bold; letter-spacing: 2px; }
+        .hero-left .main-logo-big { 
+            width: 300px; 
+            margin: 20px 0; 
+            filter: drop-shadow(0 0 20px rgba(0,242,255,0.3));
+        }
+        .hero-left h1 { font-size: 2.8rem; margin: 0; line-height: 1.1; }
 
-        /* Whitelist Form (DIN CODUL TĂU) */
-        input { padding: 15px; width: 300px; border-radius: 5px; border: 1px solid #333; background: #000; color: white; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; }
+        /* Cardul de Contract Neon */
+        .hero-right { flex: 0.8; min-width: 300px; }
+        .address-card {
+            background: #1a1f24;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .address-card h3 { color: var(--gold); margin: 0; font-size: 1.2rem; }
+        .address-card p { color: var(--text-grey); margin: 5px 0; font-size: 0.9rem; }
+        .address-card code {
+            display: block;
+            background: #000;
+            padding: 15px;
+            margin: 20px 0;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            border-left: 3px solid var(--neon-blue);
+        }
+        .btn-copy {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0,242,255,0.4);
+            transition: 0.3s;
+        }
+        .btn-copy:hover { background: var(--neon-blue); color: black; }
 
-        /* Footer & Socials */
-        footer { padding: 60px; background: #000; border-top: 1px solid var(--gold); }
-        .social-icons a { color: white; font-size: 35px; margin: 0 15px; transition: 0.3s; }
-        .social-icons a:hover { color: var(--neon-blue); }
+        /* Secțiunile tale vechi (Tokenomics, Roadmap, Whitelist) */
+        section { padding: 80px 20px; text-align: center; border-bottom: 1px solid #222; }
+        h2 { color: var(--gold); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 2px; }
+
+        .card-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        .card { background: #161b22; padding: 25px; width: 220px; border: 1px solid #333; border-radius: 10px; }
+        .card i { font-size: 30px; color: var(--gold); margin-bottom: 15px; }
+
+        .roadmap-phase { border-left: 2px solid var(--neon-blue); text-align: left; padding-left: 20px; margin: 20px auto; max-width: 600px; position: relative; }
+        .roadmap-phase::before { content: ''; width: 12px; height: 12px; background: var(--neon-blue); position: absolute; left: -7px; top: 5px; border-radius: 50%; }
+
+        /* Formular Whitelist */
+        input { padding: 12px; width: 280px; margin-bottom: 10px; background: #000; border: 1px solid #444; color: white; border-radius: 5px; }
+        .btn-submit { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; border-radius: 5px; cursor: pointer; }
+
+        footer { padding: 40px; background: #050505; color: var(--text-grey); font-size: 0.8rem; }
+        .socials a { color: white; font-size: 24px; margin: 0 15px; text-decoration: none; }
     </style>
 </head>
 <body>
 
+    <div class="top-header">
+        <img src="logo_dael.png" alt="DAEL">
+        <h2>DAEL PROJECT</h2>
+    </div>
+
     <nav>
+        <a href="#">Home</a>
         <a href="#tokenomics">Tokenomics</a>
         <a href="#roadmap">Roadmap</a>
         <a href="#contract">Contract</a>
         <a href="#whitelist">Whitelist</a>
     </nav>
 
-    <header>
-        <!-- AM PUS LOGO-UL TĂU NOU -->
-        <img src="logo_dael.png" alt="DAEL Logo" class="main-logo">
-        <h1>DAEL PROJECT</h1>
-        <p style="color: #bbb;">Digital Asset Exchange Layer - New Era on Polygon</p>
-        <a href="#whitelist" class="btn">JOIN WHITELIST</a>
+    <header class="hero">
+        <div class="hero-left">
+            <p>NEW TOKEN ERA</p>
+            <img src="logo_dael.png" alt="DAEL Logo" class="main-logo-big">
+            <h1>WELCOME TO DAEL.<br>NEW CONTRACT,<br>NEW POWER.</h1>
+        </div>
+
+        <div class="hero-right" id="contract">
+            <div class="address-card">
+                <h3>NEW DAEL TOKEN</h3>
+                <p>(polygon)</p>
+                <code id="ca">0x5876f0cb366f1b61e8797470996e76da4420676f</code>
+                <button class="btn-copy" onclick="copyCA()">COPY ADDRESS</button>
+            </div>
+        </div>
     </header>
 
-    <!-- SECȚIUNEA TOKENOMICS (RECUPERATĂ) -->
     <section id="tokenomics">
         <h2>Tokenomics</h2>
         <div class="card-container">
-            <div class="card">
-                <i class="fas fa-coins"></i>
-                <h3>1 Billion</h3>
-                <p>Total Supply</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-lock"></i>
-                <h3>Liquidity</h3>
-                <p>100% Locked at Launch</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-percentage"></i>
-                <h3>0% Tax</h3>
-                <p>Buy & Sell</p>
-            </div>
+            <div class="card"><i class="fas fa-coins"></i><h3>1 Billion</h3><p>Supply</p></div>
+            <div class="card"><i class="fas fa-lock"></i><h3>Liquidity</h3><p>100% Locked</p></div>
+            <div class="card"><i class="fas fa-percentage"></i><h3>0% Tax</h3><p>Buy/Sell</p></div>
         </div>
     </section>
 
-    <!-- SECȚIUNEA ROADMAP (RECUPERATĂ) -->
     <section id="roadmap">
         <h2>Roadmap</h2>
-        <div class="roadmap-container">
-            <div class="roadmap-phase">
-                <h3>Phase 1: Foundation</h3>
-                <p>√ Token Creation & Deployment<br>√ Website Launch<br>√ Social Media Presence</p>
-            </div>
-            <div class="roadmap-phase">
-                <h3>Phase 2: Growth</h3>
-                <p>○ Whitelist Campaign<br>○ Community Building<br>○ Marketing Initiatives</p>
-            </div>
-            <div class="roadmap-phase">
-                <h3>Phase 3: Launch</h3>
-                <p>○ DEX Listing (QuickSwap)<br>○ Liquidity Lock<br>○ Post-Launch Audit</p>
-            </div>
-        </div>
+        <div class="roadmap-phase"><h3>Phase 1: Foundation</h3><p>√ Token Creation<br>√ Website Launch</p></div>
+        <div class="roadmap-phase"><h3>Phase 2: Growth</h3><p>○ Community Building<br>○ Marketing Initiatives</p></div>
     </section>
 
-    <!-- SECȚIUNEA CONTRACT (ADRESA TA NOUĂ) -->
-    <section id="contract">
-        <h2>Official Contract</h2>
-        <div class="contract-box">
-            <p style="color: #888;">Network: Polygon (MATIC)</p>
-            <code id="ca">0x5876f0cb366f1b61e8797470996e76da4420676f</code>
-            <button onclick="copyCA()" style="background: transparent; border: 1px solid var(--neon-blue); color: var(--neon-blue); padding: 10px 20px; cursor: pointer; border-radius: 5px;">
-                <i class="fas fa-copy"></i> Copy Address
-            </button>
-        </div>
-    </section>
-
-    <!-- SECȚIUNEA WHITELIST (FORMULARUL TĂU ORIGINAL) -->
     <section id="whitelist">
         <h2>Join the Whitelist</h2>
-        <p style="color: #bbb; margin-bottom: 30px;">Input your details below to secure your spot.</p>
         <form action="https://formspree.io/f/xeoqnvod" method="POST">
-            <input type="email" name="email" placeholder="Your Email Address" required>
-            <input type="text" name="wallet" placeholder="Polygon Wallet Address" required>
-            <button type="submit" class="btn">SECURE MY SPOT</button>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="wallet" placeholder="Wallet Address" required>
+            <br>
+            <button type="submit" class="btn-submit">SECURE MY SPOT</button>
         </form>
     </section>
 
-    <!-- FOOTER (SOCIALURILE TALE) -->
     <footer>
-        <div class="social-icons">
-            <a href="https://x.com/DaeInitiative" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://t.me/DaeInitiative" target="_blank"><i class="fab fa-telegram"></i></a> 
-            <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="#" target="_blank"><i class="fas fa-ship"></i></a> 
+        <div class="socials">
+            <a href="https://x.com/DaeInitiative"><i class="fab fa-twitter"></i></a>
+            <a href="https://t.me/DaeInitiative"><i class="fab fa-telegram"></i></a>
         </div>
-        <p style="margin-top: 30px; color: #555;">&copy; 2026 DAEL PROJECT. Built on Polygon.</p>
+        <p>&copy; 2026 DAEL PROJECT. Built on Polygon.</p>
     </footer>
 
     <script>
         function copyCA() {
             const text = document.getElementById('ca').innerText;
             navigator.clipboard.writeText(text).then(() => {
-                alert("Contract Address Copied!");
+                alert("Address Copied!");
             });
         }
     </script>
-
 </body>
 </html>
