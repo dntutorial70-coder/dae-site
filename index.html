@@ -25,7 +25,7 @@
             line-height: 1.6;
         }
 
-        /* --- SOCIAL SIDEBAR (COLOANA VERTICALA) --- */
+        /* SIDEBAR SOCIAL - STÂNGA */
         .social-sidebar {
             position: fixed;
             left: 20px;
@@ -56,7 +56,7 @@
             filter: drop-shadow(0 0 8px var(--neon-blue));
         }
 
-        /* Header & Nav */
+        /* TOP BAR & NAV */
         .top-bar {
             display: flex;
             align-items: center;
@@ -81,18 +81,18 @@
         nav a { color: var(--text-grey); text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
         nav a:hover { color: var(--gold); }
 
-        /* Main Container */
+        /* HERO SECTION */
         .main-container {
             display: flex;
             max-width: 1200px;
             margin: 60px auto;
-            padding: 0 40px 0 80px; /* Am adaugat padding stanga pentru a face loc coloanei sociale */
+            padding: 0 40px 0 80px;
             gap: 60px;
             align-items: flex-start;
         }
 
         .left-side { flex: 1; text-align: left; }
-        .label-new { color: var(--gold); font-weight: bold; letter-spacing: 2px; margin-bottom: 20px; }
+        .label-new { color: var(--gold); font-weight: bold; letter-spacing: 2px; margin-bottom: 20px; font-size: 0.9rem; }
         .big-medallion {
             width: 320px;
             margin: 20px 0;
@@ -101,18 +101,17 @@
         .hero-text { font-size: 3rem; font-weight: 800; line-height: 1.1; margin-top: 30px; }
         .hero-text span { color: var(--gold); }
 
+        /* CONTRACT CARD */
         .right-side { flex: 0.7; }
-        .key-addresses-label { text-align: right; color: white; letter-spacing: 2px; margin-bottom: 15px; font-weight: bold; }
+        .key-addresses-label { text-align: right; color: white; letter-spacing: 2px; margin-bottom: 15px; font-weight: bold; font-size: 0.8rem; }
         
         .contract-card {
             background: var(--card-bg);
             border: 1px solid #333;
             border-radius: 15px;
             padding: 30px;
-            margin-bottom: 25px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
-        .contract-card.retired { opacity: 0.6; filter: grayscale(0.5); }
         .address-box {
             background: #000;
             padding: 15px;
@@ -121,6 +120,7 @@
             margin: 20px 0;
             border-left: 4px solid var(--neon-blue);
             word-break: break-all;
+            color: #fff;
         }
 
         .btn-copy {
@@ -132,11 +132,12 @@
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
+            text-transform: uppercase;
             transition: 0.3s;
         }
         .btn-copy:hover { background: var(--neon-blue); color: black; box-shadow: 0 0 30px var(--neon-blue); }
 
-        /* Sections */
+        /* SECTIONS CONTENT */
         section { padding: 80px 20px 80px 80px; text-align: center; border-top: 1px solid #1a1f24; }
         h2 { color: var(--gold); text-transform: uppercase; margin-bottom: 40px; letter-spacing: 2px; }
 
@@ -151,23 +152,23 @@
 
         footer { padding: 30px; text-align: center; background: #050505; border-top: 1px solid #222; margin-left: 60px; }
 
-        /* Responsive Mobile */
+        /* MOBILE OPTIMIZATION */
         @media (max-width: 768px) {
             .social-sidebar { position: relative; flex-direction: row; left: 0; transform: none; top: 0; margin: 20px auto; width: fit-content; }
             .main-container, section { padding-left: 20px; flex-direction: column; align-items: center; text-align: center; }
             .left-side { text-align: center; }
             footer { margin-left: 0; }
+            .hero-text { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- COLOANA SOCIALA VERTICALA -->
     <div class="social-sidebar">
-        <a href="https://x.com/DaeInitiative" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://t.me/DaeInitiative" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
-        <a href="https://linkedin.com/in/dae-initiative" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://opensea.io/collection/dae-initiative" target="_blank" title="OpenSea"><i class="fas fa-ship"></i></a>
+        <a href="https://x.com/DaeInitiative" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me/DaeInitiative" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://linkedin.com/in/dae-initiative" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://opensea.io/collection/dae-initiative" target="_blank"><i class="fas fa-ship"></i></a>
     </div>
 
     <div class="top-bar">
@@ -192,14 +193,10 @@
         <div class="right-side">
             <div class="key-addresses-label">KEY ADDRESSES</div>
             <div class="contract-card">
-                <div style="color: var(--gold); font-weight: bold;">NEW DAEL TOKEN</div>
-                <div style="font-size: 0.8rem; color: var(--text-grey);">(polygon)</div>
+                <div style="color: var(--gold); font-weight: bold; font-size: 1.1rem;">NEW DAEL TOKEN</div>
+                <div style="font-size: 0.8rem; color: var(--text-grey); margin-bottom: 10px;">(polygon)</div>
                 <div class="address-box" id="new-ca">0x5876f0cb366f1b61e8797470996e76da4420676f</div>
                 <button class="btn-copy" onclick="copyText('new-ca')">COPY ADDRESS</button>
-            </div>
-            <div class="contract-card retired">
-                <div style="color: var(--text-grey); font-weight: bold;">OLD TOKEN (RETIRED)</div>
-                <div class="address-box">0xDAEL...EXPIRED</div>
             </div>
         </div>
     </div>
