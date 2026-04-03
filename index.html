@@ -3,65 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAEL PROJECT | Official</title>
+    <title>DAEL PROJECT | Official Website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --gold: #c5a059; --bg: #0d1218; --cyan: #00f2ff; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; text-align: center; scroll-behavior: smooth; }
         
         /* HEADER */
-        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
+        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
         .logo-small { display: flex; align-items: center; gap: 10px; }
-        .logo-small img { width: 30px; height: 30px; }
-        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .logo-small img { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--gold); }
+        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
         nav a:hover { color: var(--gold); }
 
-        /* SOCIAL BAR (Twitter, Telegram, LinkedIn, OpenSea) */
-        .social-sidebar { position: fixed; left: 15px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid #333; z-index: 99; }
-        .social-sidebar a { color: #888; font-size: 1.1rem; transition: 0.3s; text-decoration: none; }
+        /* SIDEBAR SOCIALS */
+        .social-sidebar { position: fixed; left: 15px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid #333; z-index: 99; backdrop-filter: blur(5px); }
+        .social-sidebar a { color: #888; font-size: 1.3rem; transition: 0.3s; text-decoration: none; }
         .social-sidebar a:hover { color: var(--gold); transform: scale(1.2); }
 
         /* HERO SECTION */
         .hero { padding: 80px 20px; }
         
-        /* SHARP IMAGE FIX - MARIME LIMITATA PENTRU CLARITATE */
+        /* LOGO DISPLAY (Optimized for 1240x1240 source) */
         .big-medallion { 
-            width: 220px; 
+            width: 100%;
+            max-width: 400px; /* Se vede mare pe PC, dar ok pe mobil */
             height: auto;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            margin-bottom: 20px;
+            border-radius: 50%;
+            /* Efect de iluminare gold subtil */
+            box-shadow: 0 0 50px rgba(197, 160, 89, 0.15); 
+            margin-bottom: 30px;
             display: block;
             margin-left: auto;
             margin-right: auto;
+            transition: transform 0.5s ease;
         }
+        .big-medallion:hover { transform: scale(1.02) rotate(1deg); }
 
-        .hero-text { font-size: 3rem; font-weight: 800; margin: 20px 0; line-height: 1.1; text-transform: uppercase; }
+        .hero-text { font-size: clamp(2rem, 8vw, 3.8rem); font-weight: 900; margin: 20px 0; line-height: 1; text-transform: uppercase; letter-spacing: -1px; }
         .hero-text span { color: var(--gold); }
 
-        .contract-section { margin: 20px 0; background: #161b22; padding: 15px; border-radius: 10px; border: 1px solid #333; display: inline-block; }
-        .contract-address { font-family: monospace; color: var(--cyan); font-size: 0.85rem; }
+        .contract-section { margin: 30px 0; background: #161b22; padding: 20px; border-radius: 15px; border: 1px solid #333; display: inline-block; }
+        .contract-address { font-family: 'Courier New', monospace; color: var(--cyan); font-size: clamp(0.7rem, 3vw, 1rem); font-weight: bold; word-break: break-all; }
 
-        .email-btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--gold); padding: 10px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 0.85rem; margin-top: 10px; transition: 0.3s; text-transform: lowercase; }
-        .email-btn:hover { background: var(--gold); color: black; }
+        .email-link { color: #666; text-decoration: none; font-size: 0.85rem; margin-top: 20px; display: block; transition: 0.3s; font-weight: 500; }
+        .email-link:hover { color: var(--gold); }
 
         /* SECTIONS */
-        .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; border-top: 1px solid #222; }
-        .section-title { color: var(--gold); font-size: 1.8rem; margin-bottom: 40px; letter-spacing: 3px; font-weight: bold; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: #161b22; padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: left; }
-        .card h3 { color: var(--gold); margin-top: 0; }
+        .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; border-top: 1px solid #222; }
+        .section-title { color: var(--gold); font-size: 2.2rem; margin-bottom: 50px; letter-spacing: 5px; font-weight: 900; text-transform: uppercase; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: #161b22; padding: 40px; border-radius: 20px; border: 1px solid #333; text-align: left; position: relative; overflow: hidden; }
+        .card::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); opacity: 0; transition: 0.3s; }
+        .card:hover::before { opacity: 1; }
+        .card h3 { color: var(--gold); margin-top: 0; font-size: 1.3rem; margin-bottom: 15px; }
+        .card p { color: #aaa; line-height: 1.6; margin: 0; }
 
-        /* WHITELIST FORM */
-        .whitelist-form { background: #161b22; padding: 40px; border-radius: 20px; border: 1px solid var(--gold); max-width: 500px; margin: 0 auto; }
-        .whitelist-form input { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #333; background: #0d1218; color: white; box-sizing: border-box; }
-        .whitelist-form button { background: var(--gold); color: black; border: none; padding: 15px; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; text-transform: uppercase; }
+        /* WHITELIST */
+        .whitelist-form { background: #161b22; padding: 50px 30px; border-radius: 25px; border: 1px solid var(--gold); max-width: 500px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.6); }
+        .whitelist-form input { width: 100%; padding: 16px; margin-bottom: 20px; border-radius: 10px; border: 1px solid #333; background: #0d1218; color: white; box-sizing: border-box; font-size: 1rem; }
+        .whitelist-form input:focus { border-color: var(--gold); outline: none; }
+        .whitelist-form button { background: var(--gold); color: black; border: none; padding: 18px; border-radius: 10px; font-weight: 900; cursor: pointer; width: 100%; text-transform: uppercase; font-size: 1rem; transition: 0.3s; }
+        .whitelist-form button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.4); }
+
+        footer { padding: 60px 20px; color: #444; font-size: 0.8rem; letter-spacing: 1px; border-top: 1px solid #222; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="logo-small"><img src="logo_dael.png" alt="Logo"> <span style="color:var(--gold); font-weight:bold;">DAEL PROJECT</span></div>
+        <div class="logo-small"><img src="logo_dael.png" alt="DAEL Logo"> <span style="color:var(--gold); font-weight:bold; letter-spacing:2px;">DAEL</span></div>
         <nav>
             <a href="#home">Home</a>
             <a href="#tokenomics">Tokenomics</a>
@@ -70,61 +81,81 @@
         </nav>
     </div>
 
-    <!-- SOCIAL MEDIA SIDEBAR (ACTIVATE) -->
+    <!-- SIDEBAR ACTIVE WITH YOUR LINKS -->
     <div class="social-sidebar">
-        <a href="https://x.com/daeinitiative" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://t.me/daeinitiative" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.linkedin.com/company/dae-initiative" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://opensea.io/collection/dae-initiative" target="_blank"><i class="fas fa-ship"></i></a>
+        <a href="https://x.com/daeinitiative" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me/daeinitiative" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://www.linkedin.com/company/dae-initiative" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://opensea.io/collection/dae-initiative" target="_blank" title="OpenSea"><i class="fas fa-ship"></i></a>
     </div>
 
     <section class="hero" id="home">
-        <div style="color:var(--gold); font-weight:bold; letter-spacing:4px; margin-bottom:15px;">NEW TOKEN ERA</div>
+        <div style="color:var(--gold); font-weight:900; letter-spacing:6px; margin-bottom:20px; font-size:0.9rem;">BUILDING THE FUTURE</div>
         
-        <img src="logo_dael.png" class="big-medallion" alt="DAEL Logo">
+        <!-- THE 1240px LOGO WILL LOOK PERFECT HERE -->
+        <img src="logo_dael.png" class="big-medallion" alt="DAEL Premium Logo">
         
         <h1 class="hero-text">WELCOME TO DAEL.<br><span>NEW CONTRACT,</span><br>NEW POWER.</h1>
         
         <div class="contract-section">
-            <div style="font-size:0.65rem; color:#888; margin-bottom:5px;">POLYGON CONTRACT ADDRESS</div>
+            <div style="font-size:0.7rem; color:#888; margin-bottom:10px; letter-spacing:2px; font-weight:bold;">POLYGON NETWORK ADDRESS</div>
             <div class="contract-address">0x5876f0cb366f1b61e8797470996e76da4420676f</div>
         </div>
-        <br>
-        <a href="mailto:contact@daeinitiative.com" class="email-btn"><i class="fas fa-envelope"></i> contact@daeinitiative.com</a>
+        
+        <a href="mailto:contact@daeinitiative.com" class="email-link">contact@daeinitiative.com</a>
     </section>
 
-    <!-- TOKENOMICS -->
     <section class="section" id="tokenomics">
-        <div class="section-title">TOKENOMICS</div>
+        <div class="section-title">Tokenomics</div>
         <div class="grid">
-            <div class="card"><h3>Total Supply</h3><p>1,000,000,000 DAEL</p></div>
-            <div class="card"><h3>Tax Policy</h3><p>0% Buy / 0% Sell Tax</p></div>
-            <div class="card"><h3>Security</h3><p>Liquidity Locked / Verified Contract</p></div>
+            <div class="card">
+                <h3>Total Supply</h3>
+                <p>1,000,000,000 DAEL tokens minted on Polygon Network.</p>
+            </div>
+            <div class="card">
+                <h3>Transaction Tax</h3>
+                <p>Enjoy 0% Buy and 0% Sell tax. Pure decentralized trading.</p>
+            </div>
+            <div class="card">
+                <h3>Security First</h3>
+                <p>Verified Smart Contract. Liquidity locked to ensure community safety.</p>
+            </div>
         </div>
     </section>
 
-    <!-- ROADMAP -->
     <section class="section" id="roadmap">
-        <div class="section-title">ROADMAP</div>
+        <div class="section-title">Roadmap</div>
         <div class="grid">
-            <div class="card"><h3>Phase 1</h3><p>Website Launch, Socials & Community Building.</p></div>
-            <div class="card"><h3>Phase 2</h3><p>DEX Listing, Marketing Push & Listings.</p></div>
-            <div class="card"><h3>Phase 3</h3><p>Partnerships & Ecosystem Growth.</p></div>
+            <div class="card">
+                <h3>Phase 01</h3>
+                <p>Website v1 launch, community foundation, and initial marketing push.</p>
+            </div>
+            <div class="card">
+                <h3>Phase 02</h3>
+                <p>DEX Listing, CMC/CoinGecko applications, and strategic influencer partnerships.</p>
+            </div>
+            <div class="card">
+                <h3>Phase 03</h3>
+                <p>Ecosystem expansion, governance DAO, and major exchange (CEX) listings.</p>
+            </div>
         </div>
     </section>
 
-    <!-- WHITELIST -->
     <section class="section" id="whitelist">
-        <div class="section-title">JOIN THE WHITELIST</div>
+        <div class="section-title">Whitelist Registration</div>
         <div class="whitelist-form">
-            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 20px;">Submit your wallet address for early access.</p>
-            <form action="https://formspree.io/f/MĂ_VOR_ÎNTREBA_AICI_LINK-UL" method="POST">
-                <input type="text" name="wallet" placeholder="Wallet Address (0x...)" required>
-                <input type="email" name="email" placeholder="Your Email Address" required>
-                <button type="submit">Join Now</button>
+            <p style="color: #aaa; margin-bottom: 30px;">Secure your spot for the upcoming priority events.</p>
+            <form action="https://formspree.io/f/YOUR_ID" method="POST">
+                <input type="text" name="wallet" placeholder="Polygon Wallet Address (0x...)" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <button type="submit">Join Whitelist</button>
             </form>
         </div>
     </section>
+
+    <footer>
+        &copy; 2026 DAEL PROJECT | DESIGNED FOR THE NEXT GENERATION.
+    </footer>
 
 </body>
 </html>
