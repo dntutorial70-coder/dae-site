@@ -9,6 +9,8 @@
         :root { --gold: #c5a059; --bg: #0d1218; --cyan: #00f2ff; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; text-align: center; scroll-behavior: smooth; }
         
+        #github-pages-badge, .github-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; }
+
         .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
         .logo-small { display: flex; align-items: center; gap: 10px; }
         .logo-small img { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--gold); }
@@ -23,29 +25,28 @@
         .social-sidebar a:hover { color: var(--gold); transform: scale(1.2); }
 
         .hero { padding: 80px 20px; }
-        
-        .big-medallion { 
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 0 50px rgba(197, 160, 89, 0.15); 
-            margin-bottom: 30px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            image-rendering: -webkit-optimize-contrast;
-        }
+        .big-medallion { width: 100%; max-width: 400px; height: auto; border-radius: 50%; box-shadow: 0 0 50px rgba(197, 160, 89, 0.15); margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
 
         .hero-text { font-size: clamp(2rem, 8vw, 3.8rem); font-weight: 900; margin: 20px 0; line-height: 1; text-transform: uppercase; letter-spacing: -1px; }
         .hero-text span { color: var(--gold); }
 
-        .contract-section { margin: 30px 0; background: #161b22; padding: 20px; border-radius: 15px; border: 1px solid #333; display: inline-block; }
-        .contract-address { font-family: 'Courier New', monospace; color: var(--cyan); font-size: clamp(0.7rem, 3vw, 1rem); font-weight: bold; word-break: break-all; }
+        /* Stil pentru Contract Box cu Buton Copy */
+        .contract-container { margin: 30px 0; display: inline-block; }
+        .contract-section { background: #161b22; padding: 20px; border-radius: 15px; border: 1px solid #333; position: relative; }
+        .contract-address { font-family: 'Courier New', monospace; color: var(--cyan); font-size: clamp(0.7rem, 3vw, 1rem); font-weight: bold; word-break: break-all; margin: 10px 0; cursor: pointer; }
+        .copy-btn { background: var(--gold); color: black; border: none; padding: 5px 15px; border-radius: 5px; font-size: 0.7rem; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-left: 10px; }
+        .copy-btn:hover { background: white; }
+        
+        .scan-link { display: block; margin-top: 15px; color: #888; text-decoration: none; font-size: 0.8rem; transition: 0.3s; }
+        .scan-link:hover { color: var(--gold); }
+
+        .about-text { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #ccc; }
+        .about-text b { color: var(--gold); }
 
         .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; border-top: 1px solid #222; }
-        .section-title { color: var(--gold); font-size: 2.2rem; margin-bottom: 50px; letter-spacing: 5px; font-weight: 900; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .section-title { color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; letter-spacing: 5px; font-weight: 900; text-transform: uppercase; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .card { background: #161b22; padding: 40px; border-radius: 20px; border: 1px solid #333; text-align: left; }
         .card h3 { color: var(--gold); margin-top: 0; font-size: 1.3rem; margin-bottom: 15px; }
 
@@ -60,10 +61,10 @@
         <div class="logo-small"><img src="logo_dael.png?v=2" alt="DAEL Logo"> <span style="color:var(--gold); font-weight:bold; letter-spacing:2px;">DAEL</span></div>
         <nav>
             <a href="#home">Home</a>
+            <a href="#about">About</a>
             <a href="#tokenomics">Tokenomics</a>
             <a href="#roadmap">Roadmap</a>
             <a href="#whitelist">Whitelist</a>
-            <!-- EMAIL CU LITERE MICI -->
             <a href="mailto:contact@daeinitiative.com" class="top-email">contact@daeinitiative.com</a>
         </nav>
     </div>
@@ -77,17 +78,33 @@
 
     <section class="hero" id="home">
         <div style="color:var(--gold); font-weight:900; letter-spacing:6px; margin-bottom:20px; font-size:0.9rem;">BUILDING THE FUTURE</div>
-        
-        <img src="logo_dael.png?v=2" class="big-medallion" alt="DAEL Premium Logo">
-        
+        <img src="logo_dael.png?v=2" class="big-medallion" alt="DAEL Logo">
         <h1 class="hero-text">WELCOME TO DAEL.<br><span>NEW CONTRACT,</span><br>NEW POWER.</h1>
         
-        <div class="contract-section">
-            <div style="font-size:0.7rem; color:#888; margin-bottom:10px; letter-spacing:2px; font-weight:bold;">POLYGON NETWORK ADDRESS</div>
-            <div class="contract-address">0x5876f0cb366f1b61e8797470996e76da4420676f</div>
+        <div class="contract-container">
+            <div class="contract-section">
+                <div style="font-size:0.7rem; color:#888; margin-bottom:10px; letter-spacing:2px; font-weight:bold;">POLYGON NETWORK ADDRESS</div>
+                <span class="contract-address" id="contractAddr">0x5876f0cb366f1b61e8797470996e76da4420676f</span>
+                <button class="copy-btn" onclick="copyAddress()">Copy</button>
+            </div>
+            <a href="https://polygonscan.com/address/0x5876f0cb366f1b61e8797470996e76da4420676f" target="_blank" class="scan-link">
+                <i class="fas fa-external-link-alt"></i> View on Polygonscan
+            </a>
         </div>
     </section>
 
+    <section class="section" id="about">
+        <div class="section-title">What is DAEL?</div>
+        <div class="about-text">
+            <b>DAEL</b> is a next-generation digital ecosystem built on the <b>Polygon Network</b>, designed to provide 
+            maximum scalability and ultra-low transaction costs. Our mission is to empower the community through 
+            a decentralized framework where <b>transparency and security</b> are the core values. 
+            By removing entry barriers and transaction taxes, <b>DAEL</b> isn't just a token—it's the foundation 
+            for a new era of decentralized finance and digital initiative.
+        </div>
+    </section>
+
+    <!-- Restul secțiunilor (Tokenomics, Roadmap, Whitelist) rămân la fel... -->
     <section class="section" id="tokenomics">
         <div class="section-title">Tokenomics</div>
         <div class="grid">
@@ -121,5 +138,15 @@
         &copy; 2026 DAEL PROJECT.
     </footer>
 
+    <script>
+        function copyAddress() {
+            const addr = document.getElementById("contractAddr").innerText;
+            navigator.clipboard.writeText(addr).then(() => {
+                const btn = document.querySelector(".copy-btn");
+                btn.innerText = "Copied!";
+                setTimeout(() => { btn.innerText = "Copy"; }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
