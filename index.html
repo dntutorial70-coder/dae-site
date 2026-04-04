@@ -9,12 +9,18 @@
         :root { --gold: #c5a059; --bg: #0d1218; --cyan: #00f2ff; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; text-align: center; scroll-behavior: smooth; }
         
-        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
+        /* BARA DE SUS */
+        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
         .logo-small { display: flex; align-items: center; gap: 10px; }
         .logo-small img { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--gold); }
         
-        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
+        .nav-container { display: flex; align-items: center; gap: 20px; }
+        nav a { color: #888; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
         nav a:hover { color: var(--gold); }
+
+        /* EMAIL ÎN BARA DE SUS */
+        .top-email { color: var(--cyan); font-family: monospace; font-size: 0.85rem; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px; transition: 0.3s; }
+        .top-email:hover { border-color: var(--gold); color: var(--gold); }
 
         .hero { padding: 80px 20px; }
         .big-medallion { width: 100%; max-width: 400px; height: auto; border-radius: 50%; box-shadow: 0 0 50px rgba(197, 160, 89, 0.2); margin-bottom: 30px; }
@@ -32,18 +38,27 @@
 
         #game-container { position: relative; width: 100%; max-width: 600px; height: 400px; background: #000; margin: 20px auto; border: 2px solid var(--gold); border-radius: 15px; overflow: hidden; }
         canvas { width: 100%; height: 100%; display: block; }
+        
+        footer { padding: 50px 20px; background: #080a0d; border-top: 1px solid #222; margin-top: 50px; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="logo-small"><img src="logo_dael.png?v=2" alt="DAEL Logo"> <span style="color:var(--gold); font-weight:bold;">DAEL</span></div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#utility">Utility</a>
-            <a href="#game">Mini-Game</a>
-            <a href="#whitelist">Whitelist</a>
-        </nav>
+        <div class="logo-small">
+            <img src="logo_dael.png?v=2" alt="DAEL Logo"> 
+            <span style="color:var(--gold); font-weight:bold;">DAEL</span>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#utility">Utility</a>
+                <a href="#game">Game</a>
+                <a href="#whitelist">Whitelist</a>
+            </nav>
+            <!-- EMAILUL TĂU ÎN BARA DE SUS -->
+            <a href="mailto:contact@daelproject.com" class="top-email">contact@daelproject.com</a>
+        </div>
     </div>
 
     <section class="hero" id="home">
@@ -92,12 +107,18 @@
 
     <section class="section" id="whitelist">
         <div class="section-title">Join the Whitelist</div>
-        <p style="margin-bottom:20px;">Secure your spot in the first 100 members to receive the DAEL Bonus!</p>
+        <p style="margin-bottom:20px; color: #888;">Secure your spot in the first 100 members to receive the DAEL Bonus! 🎁</p>
         <form style="max-width:400px; margin:0 auto;">
-            <input type="text" placeholder="Your Polygon Wallet Address" style="width:100%; padding:15px; margin-bottom:10px; background:#161b22; border:1px solid #333; color:white; border-radius:5px;">
-            <button type="submit" style="width:100%; padding:15px; background:var(--gold); border:none; font-weight:bold; cursor:pointer; border-radius:5px;">REGISTER NOW</button>
+            <input type="email" placeholder="Your Email Address" required style="width:100%; padding:15px; margin-bottom:10px; background:#161b22; border:1px solid #333; color:white; border-radius:5px;">
+            <input type="text" placeholder="Your Polygon Wallet (0x...)" required style="width:100%; padding:15px; margin-bottom:15px; background:#161b22; border:1px solid #333; color:white; border-radius:5px;">
+            <button type="submit" style="width:100%; padding:15px; background:var(--gold); border:none; font-weight:bold; cursor:pointer; border-radius:5px; text-transform: uppercase;">Register Now</button>
         </form>
     </section>
+
+    <footer>
+        <div style="color: var(--gold); font-weight: bold; margin-bottom: 10px;">DAEL INITIATIVE</div>
+        <p style="color: #444; font-size: 0.7rem;">© 2026 DAEL Project. All Rights Reserved.</p>
+    </footer>
 
     <script>
         function copyAddress() {
@@ -124,7 +145,8 @@
         canvas.onclick = (e) => {
             if(!gameActive) return;
             const rect = canvas.getBoundingClientRect();
-            const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+            const mx = (e.clientX - rect.left) * (canvas.width / rect.width); 
+            const my = (e.clientY - rect.top) * (canvas.height / rect.height);
             enemies.forEach((en, i) => {
                 if(mx > en.x && mx < en.x+35 && my > en.y && my < en.y+35) {
                     enemies.splice(i, 1); score++;
