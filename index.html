@@ -3,98 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAEL PROJECT | Ecosystem</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>DAEL PROJECT | Official Ecosystem</title>
+    <!-- FontAwesome pentru Iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { 
             --gold: #c5a059; 
             --bg: #0d1218; 
-            --tg: #0088cc; 
-            --x: #000000; 
-            --in: #0077b5; 
-            --os: #2081e2; 
+            --tg: #0088cc; --x-color: #000; --in: #0077b5; --os: #2081e2; 
         }
         
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; text-align: center; scroll-behavior: smooth; }
 
-        /* SIDEBAR VERTICAL (STANGA) */
-        .social-sidebar {
-            position: fixed;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            z-index: 1000;
-        }
-
-        .social-sidebar a {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: 0.3s;
-            border-radius: 0 5px 5px 0;
-            margin-bottom: 5px;
-        }
-
-        .social-sidebar a:hover { width: 70px; padding-left: 10px; }
-        .sidebar-tg { background: var(--tg); }
-        .sidebar-x { background: var(--x); border: 1px solid #333; }
-        .sidebar-in { background: var(--in); }
+        /* SIDEBAR SOCIAL (STANGA) */
+        .social-sidebar { position: fixed; left: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 1000; }
+        .social-sidebar a { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.4rem; transition: 0.3s; border-radius: 0 5px 5px 0; margin-bottom: 5px; }
+        .social-sidebar a:hover { width: 65px; padding-left: 10px; }
+        
+        .sidebar-tg { background: var(--tg); } 
+        .sidebar-x { background: var(--x-color); border: 1px solid #444; } 
+        .sidebar-in { background: var(--in); } 
         .sidebar-os { background: var(--os); }
 
-        /* HEADER */
+        /* TOP BAR */
         .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 30px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
-        .nav-container nav a { color: #888; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin: 0 10px; }
-        .top-email { color: #00f2ff; font-family: monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid #333; padding: 5px 10px; border-radius: 5px; }
+        .logo-link { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        
+        .nav-container nav a { color: #888; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin: 0 12px; transition: 0.3s; }
+        .nav-container nav a:hover { color: var(--gold); }
+        
+        .top-email { color: #00f2ff; font-family: monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid #333; padding: 6px 12px; border-radius: 5px; }
 
         /* SECTIONS */
         .section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; border-top: 1px solid #222; }
-        .section-title { color: var(--gold); font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; }
+        .section-title { color: var(--gold); font-size: 2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
 
         /* HERO */
-        .hero { padding: 80px 20px; }
+        .hero { padding: 100px 20px; }
         .logo-main { width: 220px; height: 220px; border-radius: 50%; box-shadow: 0 0 50px rgba(197, 160, 89, 0.2); margin-bottom: 25px; }
 
-        /* GRID CARDS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: #161b22; padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: left; transition: 0.3s; }
-        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .card h3 { color: var(--gold); margin-top: 0; }
-
-        /* GAME ARCADE */
+        /* GAME */
         #game-container { position: relative; width: 100%; max-width: 600px; height: 400px; background: #000; margin: 0 auto; border: 2px solid var(--gold); border-radius: 15px; overflow: hidden; }
         canvas { width: 100%; height: 100%; display: block; }
         .game-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.9); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; }
-        .btn-play { background: var(--gold); color: black; border: none; padding: 12px 35px; font-weight: bold; cursor: pointer; border-radius: 5px; text-transform: uppercase; }
+        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 35px; font-weight: bold; cursor: pointer; border-radius: 5px; text-transform: uppercase; }
 
-        /* FORMS */
-        input { width: 100%; padding: 15px; margin-bottom: 10px; background: #080a0d; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box; }
-        .submit-btn { width: 100%; padding: 15px; background: var(--gold); border: none; font-weight: bold; cursor: pointer; border-radius: 5px; }
+        .card { background: #161b22; padding: 30px; border-radius: 15px; border: 1px solid #333; text-align: left; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
     </style>
 </head>
-<body>
+<body id="top">
 
-    <!-- SIDEBAR VERTICAL STANGA -->
+    <!-- SIDEBAR SOCIAL CU ICONITA X REPARATA -->
     <div class="social-sidebar">
-        <a href="https://t.me/LINK_TAU" class="sidebar-tg" target="_blank" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://x.com/LINK_TAU" class="sidebar-x" target="_blank" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://linkedin.com/in/LINK_TAU" class="sidebar-in" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://opensea.io/LINK_TAU" class="sidebar-os" target="_blank" title="OpenSea"><i class="fas fa-ship"></i></a>
+        <a href="https://t.me/LINK_TAU" class="sidebar-tg" target="_blank" title="Telegram">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+        <a href="https://x.com/LINK_TAU" class="sidebar-x" target="_blank" title="X (Twitter)">
+            <i class="fa-brands fa-x-twitter"></i>
+        </a>
+        <a href="https://linkedin.com/in/LINK_TAU" class="sidebar-in" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://opensea.io/LINK_TAU" class="sidebar-os" target="_blank" title="OpenSea">
+            <i class="fa-solid fa-ship"></i>
+        </a>
     </div>
 
+    <!-- NAVBAR -->
     <div class="top-bar">
-        <div style="display:flex; align-items:center; gap:10px;">
+        <a href="#top" class="logo-link">
             <img src="logo_dael.png" style="width:35px; border-radius:50%;">
-            <span style="color:var(--gold); font-weight:bold; letter-spacing:1px;">DAEL PROJECT</span>
-        </div>
+            <span style="color:var(--gold); font-weight:bold;">DAEL</span>
+        </a>
         <div class="nav-container">
-            <nav><a href="#roadmap">Roadmap</a><a href="#tokenomics">Tokenomics</a><a href="#games">Games</a></nav>
+            <nav>
+                <a href="#top">HOME</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#games">Games</a>
+            </nav>
         </div>
         <a href="mailto:contact@daelproject.com" class="top-email">contact@daelproject.com</a>
     </div>
@@ -102,9 +90,8 @@
     <!-- HERO -->
     <section class="hero">
         <img src="logo_dael.png" class="logo-main">
-        <h1 style="font-size: 2.5rem;">DAEL <span style="color:var(--gold)">PROJECT</span></h1>
-        <p style="color:#888; max-width: 600px; margin: 0 auto 20px;">The next generation of digital asset exchange and gaming utility on Polygon.</p>
-        <div style="background:#161b22; padding:15px; border-radius:10px; border:1px solid #333; display:inline-block; font-family: monospace;">
+        <h1>DAEL <span style="color:var(--gold)">PROJECT</span></h1>
+        <div style="background:#161b22; padding:15px; border-radius:10px; border:1px solid #333; display:inline-block; font-family: monospace; margin-top: 20px;">
             <span style="color:var(--gold)">CA:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
         </div>
     </section>
@@ -113,9 +100,9 @@
     <section class="section" id="tokenomics">
         <div class="section-title">Tokenomics</div>
         <div class="grid">
-            <div class="card"><h3>0% Transaction Tax</h3><p>Enjoy trading without friction. No hidden fees on buy or sell orders.</p></div>
-            <div class="card"><h3>1 Billion Supply</h3><p>Total supply is capped. No inflation, no minting. Pure scarcity.</p></div>
-            <div class="card"><h3>Polygon Network</h3><p>Built on Polygon for high speed and ultra-low gas fees.</p></div>
+            <div class="card"><h3>Tax: 0%</h3><p>Tranzacții libere pe rețeaua Polygon.</p></div>
+            <div class="card"><h3>Supply: 1B</h3><p>Stoc fix. Valoare sustenabilă pe termen lung.</p></div>
+            <div class="card"><h3>LP Locked</h3><p>Lichiditate blocată pentru siguranța investitorilor.</p></div>
         </div>
     </section>
 
@@ -123,90 +110,65 @@
     <section class="section" id="roadmap">
         <div class="section-title">Roadmap</div>
         <div class="grid">
-            <div class="card"><h3>Phase 1: Foundation</h3><p>• Smart Contract Deployment<br>• Community Socials<br>• Initial Marketing</p></div>
-            <div class="card"><h3>Phase 2: Launch</h3><p>• DEX Listing<br>• CoinMarketCap/CG<br>• NFT Collection Alpha</p></div>
-            <div class="card"><h3>Phase 3: Ecosystem</h3><p>• Play-to-Earn Rewards<br>• CEX Listings<br>• Dael Arcade V2</p></div>
+            <div class="card"><h3>Faza 1</h3><p>Lansare Community & Socials.</p></div>
+            <div class="card"><h3>Faza 2</h3><p>Marketing agresiv & DEX Listing.</p></div>
+            <div class="card)<h3>Faza 3</h3><p>NFTs & Parteneriate Globale.</p></div>
         </div>
     </section>
 
-    <!-- GAMES -->
+    <!-- ARCADE -->
     <section class="section" id="games">
-        <div class="section-title">Dael Arcade</div>
-        <div style="margin-bottom:20px;">
-            <button class="btn-play" style="background:#161b22; color:white; border:1px solid #333; margin: 0 5px;" onclick="switchGame('defense')">Defense</button>
-            <button class="btn-play" style="background:#161b22; color:white; border:1px solid #333; margin: 0 5px;" onclick="switchGame('collector')">Collector</button>
-        </div>
+        <div class="section-title">DAEL Arcade</div>
         <div id="game-container">
             <canvas id="gameCanvas"></canvas>
-            <div id="game-ui" style="position:absolute; top:15px; left:15px; color:var(--gold); font-weight:bold; font-size:1.2rem;">Score: 0</div>
+            <div id="game-ui" style="position:absolute; top:15px; left:15px; color:var(--gold); font-weight:bold;">Score: 0</div>
             <div id="start-screen" class="game-overlay">
-                <h2 id="game-name" style="color:var(--gold);">DAEL Defense</h2>
-                <p>Reach 50 points for a reward code!</p>
-                <button onclick="startGame()" class="btn-play">START MISSION</button>
-                <div id="reward-box" style="display:none; margin-top:20px; padding:15px; border:2px dashed #00f2ff; color:#00f2ff;">
-                    REWARD UNLOCKED: <span id="secret-code" style="font-weight:bold;"></span>
-                </div>
+                <h2 style="color:var(--gold);">DAEL Defense</h2>
+                <button onclick="startGame()" class="btn-gold">START</button>
             </div>
         </div>
     </section>
 
-    <!-- WHITELIST -->
-    <section class="section">
-        <div class="section-title">Join the Whitelist</div>
-        <form style="max-width:450px; margin:0 auto; background:#161b22; padding:30px; border-radius:15px;">
-            <input type="email" placeholder="Enter Email" required>
-            <input type="text" placeholder="Polygon Wallet Address" required>
-            <button type="submit" class="submit-btn">REGISTER NOW</button>
-        </form>
-    </section>
+    <footer style="padding: 40px 0; color: #444; font-size: 0.8rem;">
+        &copy; 2026 DAEL PROJECT. Build on Polygon.
+    </footer>
 
     <script>
         const canvas = document.getElementById('gameCanvas');
         const ctx = canvas.getContext('2d');
-        let currentMode = 'defense', score = 0, gameActive = false, items = [], playerX = 300;
+        let gameActive = false, score = 0, items = [];
 
-        function switchGame(mode) {
-            currentMode = mode; gameActive = false; items = []; score = 0;
-            document.getElementById('game-ui').innerText = "Score: 0";
-            document.getElementById('reward-box').style.display = 'none';
-            document.getElementById('game-name').innerText = mode === 'defense' ? "DAEL Defense" : "DAEL Collector";
-            document.getElementById('start-screen').style.display = 'flex';
+        function startGame() { 
+            score = 0; items = []; gameActive = true; 
+            document.getElementById('start-screen').style.display = 'none'; 
+            update(); 
         }
-
-        function startGame() { score = 0; items = []; gameActive = true; document.getElementById('start-screen').style.display = 'none'; update(); }
-
-        canvas.onclick = (e) => {
-            if(!gameActive || currentMode !== 'defense') return;
-            const rect = canvas.getBoundingClientRect();
-            const mx = (e.clientX - rect.left) * (600 / rect.width);
-            const my = (e.clientY - rect.top) * (400 / rect.height);
-            items.forEach((it, i) => { if(mx > it.x && mx < it.x+35 && my > it.y && my < it.y+35) { items.splice(i, 1); score++; document.getElementById('game-ui').innerText = "Score: " + score; } });
-        };
-
-        canvas.onmousemove = (e) => { const rect = canvas.getBoundingClientRect(); playerX = (e.clientX - rect.left) * (600 / rect.width); };
 
         function update() {
             if(!gameActive) return;
-            ctx.clearRect(0,0,600,400); canvas.width = 600; canvas.height = 400;
-            if(currentMode === 'defense') {
-                if(Math.random() < 0.04) items.push({x: Math.random()*570, y: -30});
-                items.forEach((it, i) => { it.y += 2.5 + (score/30); ctx.fillStyle = "#ff4d4d"; ctx.fillRect(it.x, it.y, 35, 35); if(it.y > 400) endGame(); });
-            } else {
-                if(Math.random() < 0.05) items.push({x: Math.random()*570, y: -30, type: Math.random() > 0.2 ? 'coin' : 'bomb'});
-                ctx.fillStyle = "#c5a059"; ctx.beginPath(); ctx.arc(playerX, 370, 25, 0, Math.PI*2); ctx.fill();
-                items.forEach((it, i) => {
-                    it.y += 3 + (score/30); ctx.fillStyle = it.type === 'coin' ? "#c5a059" : "red"; ctx.beginPath(); ctx.arc(it.x, it.y, 12, 0, Math.PI*2); ctx.fill();
-                    if(it.y > 350 && it.y < 390 && Math.abs(it.x - playerX) < 30) { if(it.type === 'bomb') endGame(); else { items.splice(i, 1); score++; document.getElementById('game-ui').innerText = "Score: " + score; } }
-                    if(it.y > 400) items.splice(i, 1);
-                });
-            }
-            if(gameActive) requestAnimationFrame(update);
+            ctx.clearRect(0,0,600,400);
+            canvas.width = 600; canvas.height = 400;
+            if(Math.random() < 0.04) items.push({x: Math.random()*570, y: -30});
+            items.forEach((it, i) => {
+                it.y += 3;
+                ctx.fillStyle = "red";
+                ctx.fillRect(it.x, it.y, 30, 30);
+                if(it.y > 400) { gameActive = false; document.getElementById('start-screen').style.display = 'flex'; }
+            });
+            requestAnimationFrame(update);
         }
 
-        function endGame() {
-            gameActive = false; document.getElementById('start-screen').style.display = 'flex';
-            if(score >= 50) { document.getElementById('reward-box').style.display = 'block'; document.getElementById('secret-code').innerText = "DAEL-" + Math.floor(Math.random()*999) + "-VIP"; }
-        }
+        canvas.onclick = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mx = (e.clientX - rect.left) * (600 / rect.width);
+            const my = (e.clientY - rect.top) * (400 / rect.height);
+            items.forEach((it, i) => {
+                if(mx > it.x && mx < it.x+30 && my > it.y && my < it.y+30) {
+                    items.splice(i, 1); score++;
+                    document.getElementById('game-ui').innerText = "Score: " + score;
+                }
+            });
+        };
     </script>
 </body>
 </html>
