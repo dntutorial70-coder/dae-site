@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,143 +9,146 @@
         :root { --gold: #c5a059; --bg: #0d1218; --cyan: #00f2ff; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; text-align: center; scroll-behavior: smooth; }
         
+        /* Ascundem badge-ul de GitHub */
         #github-pages-badge, .github-badge { display: none !important; opacity: 0 !important; visibility: hidden !important; }
 
         .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 50px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #222; }
         .logo-small { display: flex; align-items: center; gap: 10px; }
         .logo-small img { width: 35px; height: 35px; border-radius: 50%; border: 1px solid var(--gold); }
         
-        nav { display: flex; align-items: center; }
-        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        nav a { color: #888; text-decoration: none; margin-left: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; }
         nav a:hover { color: var(--gold); }
-        .top-email { color: var(--gold); text-decoration: none; margin-left: 25px; font-size: 0.75rem; font-weight: bold; border-left: 1px solid #333; padding-left: 25px; text-transform: lowercase; }
-
-        .social-sidebar { position: fixed; left: 15px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; background: rgba(255,255,255,0.05); padding: 15px; border-radius: 20px; border: 1px solid #333; z-index: 99; backdrop-filter: blur(5px); }
-        .social-sidebar a { color: #888; font-size: 1.3rem; transition: 0.3s; text-decoration: none; }
-        .social-sidebar a:hover { color: var(--gold); transform: scale(1.2); }
 
         .hero { padding: 80px 20px; }
-        .big-medallion { width: 100%; max-width: 400px; height: auto; border-radius: 50%; box-shadow: 0 0 50px rgba(197, 160, 89, 0.15); margin-bottom: 30px; display: block; margin-left: auto; margin-right: auto; }
+        .big-medallion { width: 100%; max-width: 400px; height: auto; border-radius: 50%; box-shadow: 0 0 50px rgba(197, 160, 89, 0.2); margin-bottom: 30px; }
 
-        .hero-text { font-size: clamp(2rem, 8vw, 3.8rem); font-weight: 900; margin: 20px 0; line-height: 1; text-transform: uppercase; letter-spacing: -1px; }
-        .hero-text span { color: var(--gold); }
+        .contract-section { background: #161b22; padding: 20px; border-radius: 15px; border: 1px solid #333; display: inline-block; margin-top: 20px; }
+        .copy-btn { background: var(--gold); color: black; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; margin-left: 10px; }
 
-        /* Stil pentru Contract Box cu Buton Copy */
-        .contract-container { margin: 30px 0; display: inline-block; }
-        .contract-section { background: #161b22; padding: 20px; border-radius: 15px; border: 1px solid #333; position: relative; }
-        .contract-address { font-family: 'Courier New', monospace; color: var(--cyan); font-size: clamp(0.7rem, 3vw, 1rem); font-weight: bold; word-break: break-all; margin: 10px 0; cursor: pointer; }
-        .copy-btn { background: var(--gold); color: black; border: none; padding: 5px 15px; border-radius: 5px; font-size: 0.7rem; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: 0.3s; margin-left: 10px; }
-        .copy-btn:hover { background: white; }
-        
-        .scan-link { display: block; margin-top: 15px; color: #888; text-decoration: none; font-size: 0.8rem; transition: 0.3s; }
-        .scan-link:hover { color: var(--gold); }
+        .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; border-top: 1px solid #222; }
+        .section-title { color: var(--gold); font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 3px; }
 
-        .about-text { max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8; color: #ccc; }
-        .about-text b { color: var(--gold); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: #161b22; padding: 30px; border-radius: 20px; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .card i { color: var(--gold); font-size: 2rem; margin-bottom: 15px; }
 
-        .section { padding: 100px 20px; max-width: 1100px; margin: 0 auto; border-top: 1px solid #222; }
-        .section-title { color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; letter-spacing: 5px; font-weight: 900; text-transform: uppercase; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .card { background: #161b22; padding: 40px; border-radius: 20px; border: 1px solid #333; text-align: left; }
-        .card h3 { color: var(--gold); margin-top: 0; font-size: 1.3rem; margin-bottom: 15px; }
-
-        .whitelist-form { background: #161b22; padding: 50px 30px; border-radius: 25px; border: 1px solid var(--gold); max-width: 500px; margin: 0 auto; }
-        .whitelist-form input { width: 100%; padding: 16px; margin-bottom: 20px; border-radius: 10px; border: 1px solid #333; background: #0d1218; color: white; box-sizing: border-box; }
-        .whitelist-form button { background: var(--gold); color: black; border: none; padding: 18px; border-radius: 10px; font-weight: 900; cursor: pointer; width: 100%; text-transform: uppercase; }
+        /* Stil Joc */
+        #game-container { position: relative; width: 100%; max-width: 600px; height: 400px; background: #000; margin: 20px auto; border: 2px solid var(--gold); border-radius: 15px; overflow: hidden; }
+        canvas { width: 100%; height: 100%; display: block; }
     </style>
 </head>
 <body>
 
     <div class="top-bar">
-        <div class="logo-small"><img src="logo_dael.png?v=2" alt="DAEL Logo"> <span style="color:var(--gold); font-weight:bold; letter-spacing:2px;">DAEL</span></div>
+        <div class="logo-small"><img src="logo_dael.png?v=2" alt="DAEL Logo"> <span style="color:var(--gold); font-weight:bold;">DAEL</span></div>
         <nav>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#tokenomics">Tokenomics</a>
-            <a href="#roadmap">Roadmap</a>
+            <a href="#utility">Beneficii</a>
+            <a href="#game">Mini-Joc</a>
             <a href="#whitelist">Whitelist</a>
-            <a href="mailto:contact@daeinitiative.com" class="top-email">contact@daeinitiative.com</a>
         </nav>
     </div>
 
-    <div class="social-sidebar">
-        <a href="https://x.com/daeinitiative" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://t.me/daeinitiative" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://www.linkedin.com/company/dae-initiative" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://opensea.io/collection/dae-initiative" target="_blank"><i class="fas fa-ship"></i></a>
-    </div>
-
     <section class="hero" id="home">
-        <div style="color:var(--gold); font-weight:900; letter-spacing:6px; margin-bottom:20px; font-size:0.9rem;">BUILDING THE FUTURE</div>
         <img src="logo_dael.png?v=2" class="big-medallion" alt="DAEL Logo">
-        <h1 class="hero-text">WELCOME TO DAEL.<br><span>NEW CONTRACT,</span><br>NEW POWER.</h1>
+        <h1 style="font-size: 3rem; margin: 10px 0;">WELCOME TO <span style="color:var(--gold)">DAEL</span></h1>
+        <p>Digital Asset Exchange Layer | Viitorul tău pe Polygon</p>
         
-        <div class="contract-container">
-            <div class="contract-section">
-                <div style="font-size:0.7rem; color:#888; margin-bottom:10px; letter-spacing:2px; font-weight:bold;">POLYGON NETWORK ADDRESS</div>
-                <span class="contract-address" id="contractAddr">0x5876f0cb366f1b61e8797470996e76da4420676f</span>
-                <button class="copy-btn" onclick="copyAddress()">Copy</button>
+        <div class="contract-section">
+            <span id="contractAddr" style="font-family: monospace; color: var(--cyan);">0x5876f0cb366f1b61e8797470996e76da4420676f</span>
+            <button class="copy-btn" onclick="copyAddress()">Copy</button>
+        </div>
+    </section>
+
+    <section class="section" id="utility">
+        <div class="section-title">De ce să deții DAEL?</div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-crown"></i>
+                <h3>Membru VIP</h3>
+                <p>Acces prioritar la toate lansările noastre viitoare de active digitale și NFT-uri.</p>
             </div>
-            <a href="https://polygonscan.com/address/0x5876f0cb366f1b61e8797470996e76da4420676f" target="_blank" class="scan-link">
-                <i class="fas fa-external-link-alt"></i> View on Polygonscan
-            </a>
+            <div class="card">
+                <i class="fas fa-vote-yea"></i>
+                <h3>Vocea Ta Contează</h3>
+                <p>Tu decizi direcția proiectului prin vot. Comunitatea conduce DAEL.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-gift"></i>
+                <h3>Recompense HODL</h3>
+                <p>Premiem lunar cei mai fideli deținători cu bonusuri direct în portofel.</p>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="about">
-        <div class="section-title">What is DAEL?</div>
-        <div class="about-text">
-            <b>DAEL</b> is a next-generation digital ecosystem built on the <b>Polygon Network</b>, designed to provide 
-            maximum scalability and ultra-low transaction costs. Our mission is to empower the community through 
-            a decentralized framework where <b>transparency and security</b> are the core values. 
-            By removing entry barriers and transaction taxes, <b>DAEL</b> isn't just a token—it's the foundation 
-            for a new era of decentralized finance and digital initiative.
-        </div>
-    </section>
-
-    <!-- Restul secțiunilor (Tokenomics, Roadmap, Whitelist) rămân la fel... -->
-    <section class="section" id="tokenomics">
-        <div class="section-title">Tokenomics</div>
-        <div class="grid">
-            <div class="card"><h3>Total Supply</h3><p>1,000,000,000 DAEL tokens on Polygon.</p></div>
-            <div class="card"><h3>Transaction Tax</h3><p>0% Buy / 0% Sell. Community driven.</p></div>
-            <div class="card"><h3>Security</h3><p>Verified Contract & Locked Liquidity.</p></div>
-        </div>
-    </section>
-
-    <section class="section" id="roadmap">
-        <div class="section-title">Roadmap</div>
-        <div class="grid">
-            <div class="card"><h3>Phase 01</h3><p>Website launch, community building, and social growth.</p></div>
-            <div class="card"><h3>Phase 02</h3><p>DEX Listings and strategic marketing partnerships.</p></div>
-            <div class="card"><h3>Phase 03</h3><p>Ecosystem expansion and major CEX listings.</p></div>
+    <section class="section" id="game">
+        <div class="section-title">DAEL Defense Game</div>
+        <p>Protejează ecosistemul! Distruge rachetele și adună puncte.</p>
+        <div id="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="game-ui" style="position:absolute; top:10px; left:10px; color:var(--gold);">Score: 0</div>
+            <div id="start-screen" style="position:absolute; inset:0; background:rgba(0,0,0,0.8); display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <button onclick="startGame()" style="background:var(--gold); padding:10px 20px; border:none; cursor:pointer; font-weight:bold;">START JOC</button>
+            </div>
         </div>
     </section>
 
     <section class="section" id="whitelist">
-        <div class="section-title">Whitelist Registration</div>
-        <div class="whitelist-form">
-            <form action="https://formspree.io/f/YOUR_ID" method="POST">
-                <input type="text" name="wallet" placeholder="Polygon Wallet Address" required>
-                <input type="email" name="email" placeholder="Email Address" required>
-                <button type="submit">Join Whitelist</button>
-            </form>
-        </div>
+        <div class="section-title">Whitelist</div>
+        <form style="max-width:400px; margin:0 auto;">
+            <input type="text" placeholder="Adresa Portofel Polygon" style="width:100%; padding:15px; margin-bottom:10px; background:#161b22; border:1px solid #333; color:white;">
+            <button type="submit" style="width:100%; padding:15px; background:var(--gold); border:none; font-weight:bold; cursor:pointer;">MĂ ÎNSCRIU ACUM</button>
+        </form>
     </section>
-
-    <footer style="padding: 60px; color: #444; font-size: 0.8rem; border-top: 1px solid #222;">
-        &copy; 2026 DAEL PROJECT.
-    </footer>
 
     <script>
         function copyAddress() {
             const addr = document.getElementById("contractAddr").innerText;
             navigator.clipboard.writeText(addr).then(() => {
-                const btn = document.querySelector(".copy-btn");
-                btn.innerText = "Copied!";
-                setTimeout(() => { btn.innerText = "Copy"; }, 2000);
+                alert("Adresă copiată!");
             });
+        }
+
+        // Logică Joc Simplificată
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        let score = 0, gameActive = false, enemies = [];
+
+        function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+        window.onresize = resize; resize();
+
+        function startGame() {
+            score = 0; enemies = []; gameActive = true;
+            document.getElementById('start-screen').style.display = 'none';
+            update();
+        }
+
+        canvas.onclick = (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const mx = e.clientX - rect.left; const my = e.clientY - rect.top;
+            enemies.forEach((en, i) => {
+                if(mx > en.x && mx < en.x+30 && my > en.y && my < en.y+30) {
+                    enemies.splice(i, 1); score++;
+                    document.getElementById('game-ui').innerText = "Score: " + score;
+                }
+            });
+        };
+
+        function update() {
+            if(!gameActive) return;
+            ctx.clearRect(0,0,canvas.width, canvas.height);
+            if(Math.random() < 0.03) enemies.push({x: Math.random()*(canvas.width-30), y: -30});
+            enemies.forEach((en, i) => {
+                en.y += 2;
+                ctx.fillStyle = "red"; ctx.fillRect(en.x, en.y, 30, 30);
+                if(en.y > canvas.height) { 
+                    gameActive = false; 
+                    document.getElementById('start-screen').style.display = 'flex';
+                    document.getElementById('start-screen').innerHTML = `<h3>Scor: ${score}</h3><button onclick="startGame()" style="background:var(--gold); padding:10px 20px; border:none; cursor:pointer;">REÎNCEARCĂ</button>`;
+                }
+            });
+            requestAnimationFrame(update);
         }
     </script>
 </body>
