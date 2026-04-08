@@ -24,7 +24,7 @@
         /* HERO */
         .hero { padding: 100px 20px; text-align: center; }
         .logo-main { width: 180px; height: 180px; border-radius: 50%; box-shadow: 0 0 40px rgba(197, 160, 89, 0.2); margin-bottom: 20px; }
-        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; }
+        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; cursor: pointer; }
 
         /* SECTIONS */
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
@@ -33,96 +33,80 @@
         .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: left; }
         .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        /* ARCADE */
-        .arcade-container { max-width: 700px; margin: 0 auto; position: relative; border: 2px solid var(--gold); border-radius: 12px; overflow: hidden; height: 400px; background: #000; }
-        .game-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.85); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 10; }
-        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; margin: 5px; }
-        .btn-outline { background: transparent; color: white; border: 1px solid #444; padding: 8px 20px; cursor: pointer; border-radius: 4px; margin: 0 5px; }
-        .btn-outline.active { background: var(--gold); color: black; border-color: var(--gold); }
-
         /* FORM */
         input { width: 100%; padding: 15px; margin-bottom: 10px; background: #080a0d; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box; }
+        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; width: 100%; }
     </style>
 </head>
 <body id="top">
 
-    <!-- SIDEBAR SOCIAL -->
     <div class="social-sidebar">
-        <a href="https://t.me/yourlink" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://x.com/yourlink" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://linkedin.com/in/yourlink" class="sidebar-in" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://opensea.io/yourlink" class="sidebar-os" target="_blank"><i class="fa-solid fa-ship"></i></a>
+        <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://x.com/denis_de84848" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="sidebar-in" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://opensea.io/" class="sidebar-os" target="_blank"><i class="fa-solid fa-ship"></i></a>
     </div>
 
-    <!-- HEADER -->
     <header class="top-bar">
         <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:white;">
-            <img src="logo_dael.png" style="width:30px; border-radius:50%;">
-            <span style="font-weight:bold;">DAEL</span>
+            <img src="logo_dael.png" style="width:30px; border-radius:50%;" alt="DAEL Logo">
+            <span style="font-weight:bold;">DAEL PROJECT</span>
         </a>
         <nav class="nav-links">
             <a href="#top">HOME</a>
             <a href="#roadmap">ROADMAP</a>
             <a href="#tokenomics">TOKENOMICS</a>
-            <a href="#games">GAMES</a>
+            <a href="#team">TEAM</a>
         </nav>
         <a href="mailto:contact@daelproject.com" class="top-email">contact@daelproject.com</a>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
-        <img src="logo_dael.png" class="logo-main">
+        <img src="logo_dael.png" class="logo-main" alt="DAEL Large Logo">
         <h1>DIGITAL ASSET <span style="color:var(--gold)">EXCHANGE LAYER</span></h1>
+        <p style="color: #888; max-width: 600px; margin: 0 auto;">Bridging the gap between digital assets and decentralized infrastructure on Polygon Network.</p>
         <div class="ca-box">
             <span style="color:var(--gold)">CA:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
         </div>
     </section>
 
-    <!-- ROADMAP -->
     <section class="container" id="roadmap">
         <h2 class="section-title">Roadmap</h2>
         <div class="grid">
             <div class="card"><h3>Phase 1</h3><p>Community building, Social Media Launch, and initial Marketing push.</p></div>
             <div class="card"><h3>Phase 2</h3><p>DEX Listing, CMC/CoinGecko applications, and influencer partnerships.</p></div>
-            <div class="card"><h3>Phase 3</h3><p>OpenSea NFT Drop, Dael Arcade expansion, and CEX listings.</p></div>
+            <div class="card"><h3>Phase 3</h3><p>OpenSea NFT Drop, Governance platform launch, and CEX listings.</p></div>
         </div>
     </section>
 
-    <!-- TOKENOMICS -->
     <section class="container" id="tokenomics">
         <h2 class="section-title">Tokenomics</h2>
         <div class="grid">
             <div class="card"><h3>0% Buy/Sell Tax</h3><p>Trade without fees on Polygon Network.</p></div>
             <div class="card"><h3>1 Billion Supply</h3><p>Fixed total supply. No minting possible.</p></div>
-            <div class="card"><h3>Locked Liquidity</h3><p>Lichiditate blocată pentru 12 luni (UNCX).</p></div>
+            <div class="card"><h3>Locked Liquidity</h3><p>Liquidity locked for 12 months via UNCX Network.</p></div>
         </div>
     </section>
 
-    <!-- ARCADE -->
-    <section class="container" id="games">
-        <h2 class="section-title">DAEL Arcade</h2>
-        <div style="text-align:center; margin-bottom:20px;">
-            <button class="btn-outline active" onclick="switchGame('defense')">Defense</button>
-            <button class="btn-outline" onclick="switchGame('collector')">Collector</button>
-        </div>
-        <div class="arcade-container">
-            <canvas id="gameCanvas"></canvas>
-            <div id="game-ui" style="position:absolute; top:20px; left:20px; color:var(--gold); font-weight:bold;">Score: 0</div>
-            <div id="start-screen" class="game-overlay">
-                <h2 id="game-name" style="color:var(--gold);">DAEL Defense</h2>
-                <button onclick="startGame()" class="btn-gold">PLAY NOW</button>
+    <section class="container" id="team">
+        <h2 class="section-title">Core Team</h2>
+        <div style="display: flex; justify-content: center;">
+            <div class="card" style="max-width: 400px; text-align: center;">
+                <img src="https://ui-avatars.com/api/?name=Denis+Nicolae&background=c5a059&color=fff" style="border-radius: 50%; width: 80px; margin-bottom: 15px;">
+                <h3>Denis Nicolae</h3>
+                <p>Founder & Lead Developer</p>
+                <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" target="_blank" style="color: var(--cyan); text-decoration: none;">View LinkedIn Profile</a>
             </div>
         </div>
     </section>
 
-    <!-- WHITELIST -->
     <section class="container" id="whitelist">
-        <h2 class="section-title">Join Whitelist</h2>
+        <h2 class="section-title">Get in Touch</h2>
         <div style="max-width:500px; margin:0 auto; background:var(--card); padding:40px; border-radius:12px; border:1px solid #333;">
             <form>
                 <input type="email" placeholder="Your Email Address" required>
                 <input type="text" placeholder="Polygon Wallet (0x...)" required>
-                <button type="submit" class="btn-gold" style="width:100%; margin:0; margin-top:10px;">SUBMIT APPLICATION</button>
+                <button type="submit" class="btn-gold">SUBMIT APPLICATION</button>
             </form>
         </div>
     </section>
@@ -131,48 +115,5 @@
         &copy; 2026 DAEL PROJECT. All rights reserved.
     </footer>
 
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        let currentMode = 'defense', gameActive = false, score = 0, items = [];
-
-        function switchGame(mode) {
-            currentMode = mode; gameActive = false; score = 0; items = [];
-            document.getElementById('game-ui').innerText = "Score: 0";
-            document.querySelectorAll('.btn-outline').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('game-name').innerText = mode === 'defense' ? "DAEL Defense" : "DAEL Collector";
-            document.getElementById('start-screen').style.display = 'flex';
-        }
-
-        function startGame() { 
-            score = 0; items = []; gameActive = true; 
-            document.getElementById('start-screen').style.display = 'none'; 
-            update(); 
-        }
-
-        function update() {
-            if(!gameActive) return;
-            canvas.width = 700; canvas.height = 400;
-            ctx.clearRect(0,0,700,400);
-            if(Math.random() < 0.04) items.push({x: Math.random()*670, y: -30});
-            items.forEach((it, i) => {
-                it.y += 3;
-                ctx.fillStyle = currentMode === 'defense' ? "red" : var(--gold);
-                ctx.fillRect(it.x, it.y, 30, 30);
-                if(it.y > 400) { gameActive = false; document.getElementById('start-screen').style.display = 'flex'; }
-            });
-            requestAnimationFrame(update);
-        }
-
-        canvas.onclick = (e) => {
-            const rect = canvas.getBoundingClientRect();
-            const mx = (e.clientX - rect.left) * (700 / rect.width);
-            const my = (e.clientY - rect.top) * (400 / rect.height);
-            items.forEach((it, i) => {
-                if(mx > it.x && mx < it.x+30 && my > it.y && my < it.y+30) { items.splice(i, 1); score++; document.getElementById('game-ui').innerText = "Score: " + score; }
-            });
-        };
-    </script>
 </body>
 </html>
