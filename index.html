@@ -33,11 +33,16 @@
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
         .section-title { color: var(--gold); font-size: 2rem; text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; }
-        .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: center; }
+        .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; font-size: 1.5rem; }
+        .stat-value { display: block; font-size: 2rem; font-weight: bold; color: white; margin: 10px 0; }
+
+        /* WHITELIST */
+        .whitelist-box { background: linear-gradient(145deg, #161b22, #0d1218); padding: 40px; border-radius: 15px; border: 1px solid var(--gold); max-width: 600px; margin: 0 auto; text-align: center; }
+        .whitelist-input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box; }
 
         .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-gold:hover { background: #d4b47a; transform: translateY(-2px); }
+        .btn-gold:hover { background: #d4b47a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3); }
         
         .footer-socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
         .footer-socials a { color: #666; font-size: 1.5rem; transition: 0.3s; }
@@ -62,6 +67,7 @@
             <a href="#top">HOME</a>
             <a href="#roadmap">ROADMAP</a>
             <a href="#tokenomics">TOKENOMICS</a>
+            <a href="#whitelist">WHITELIST</a>
         </nav>
         <a href="mailto:contact@daeinitiative.com" class="top-email">contact@daeinitiative.com</a>
     </header>
@@ -80,9 +86,43 @@
     <section class="container" id="roadmap">
         <h2 class="section-title">Project Roadmap</h2>
         <div class="grid">
-            <div class="card"><h3>Phase 1</h3><p>Community building, Site launch at daeinitiative.com, and initial Marketing push.</p></div>
+            <div class="card"><h3>Phase 1</h3><p>Community building, Site launch, and initial Marketing push.</p></div>
             <div class="card"><h3>Phase 2</h3><p>DEX Listing, CMC/CoinGecko applications, and PolygonScan verification.</p></div>
             <div class="card"><h3>Phase 3</h3><p>Ecosystem expansion, NFT integration, and CEX listings.</p></div>
+        </div>
+    </section>
+
+    <section class="container" id="tokenomics">
+        <h2 class="section-title">Tokenomics</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Tax</h3>
+                <span class="stat-value">0%</span>
+                <p>Buy/Sell Tax. Total community freedom.</p>
+            </div>
+            <div class="card">
+                <h3>Total Supply</h3>
+                <span class="stat-value">1,000,000,000</span>
+                <p>DAEL Total Supply on Polygon.</p>
+            </div>
+            <div class="card">
+                <h3>Network</h3>
+                <span class="stat-value">POLYGON</span>
+                <p>Fast, Secure, and Scalable layer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container" id="whitelist">
+        <h2 class="section-title">Join the Whitelist</h2>
+        <div class="whitelist-box">
+            <p>Get exclusive access and stay updated on our launch.</p>
+            <form action="mailto:contact@daeinitiative.com" method="post" enctype="text/plain">
+                <input type="text" name="Name" class="whitelist-input" placeholder="Your Name" required>
+                <input type="email" name="Email" class="whitelist-input" placeholder="Your Email Address" required>
+                <input type="text" name="Wallet" class="whitelist-input" placeholder="Polygon Wallet Address (0x...)">
+                <button type="submit" class="btn-gold" style="margin-top:15px; width:100%;">APPLY FOR WHITELIST</button>
+            </form>
         </div>
     </section>
 
@@ -95,8 +135,8 @@
         </div>
         
         <p style="font-size: 0.7rem; color: #555; max-width: 800px; margin: 25px auto; line-height: 1.5; font-style: italic;">
-            Disclaimer: DAEL is a utility token on the Polygon Network. Cryptocurrency investments are subject to high market risk. 
-            This website does not constitute financial advice. Always conduct your own research before participating in any crypto project.
+            Disclaimer: DAEL is a utility token. Cryptocurrency investments are subject to market risk. 
+            This website does not constitute financial advice. Always conduct your own research.
         </p>
 
         <p style="margin-top:20px;">&copy; 2026 DAEL PROJECT | Hosted on <a href="https://daeinitiative.com" style="color: #666; text-decoration: none;">daeinitiative.com</a></p>
