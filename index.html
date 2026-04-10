@@ -11,8 +11,12 @@
 
         /* SIDEBAR */
         .social-sidebar { position: fixed; left: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 9999; }
-        .social-sidebar a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.2rem; border-radius: 0 4px 4px 0; margin-bottom: 2px; }
-        .sidebar-tg { background: #0088cc; } .sidebar-x { background: #000; border: 1px solid #333; }
+        .social-sidebar a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.2rem; border-radius: 0 4px 4px 0; margin-bottom: 2px; transition: 0.3s; }
+        .sidebar-tg { background: #0088cc; } 
+        .sidebar-x { background: #000; border: 1px solid #333; }
+        .sidebar-li { background: #0077b5; }
+        .sidebar-os { background: #2081e2; }
+        .social-sidebar a:hover { transform: translateX(5px); opacity: 0.9; }
 
         /* HEADER */
         .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
@@ -23,7 +27,7 @@
         /* HERO */
         .hero { padding: 100px 20px; text-align: center; }
         .logo-main { width: 180px; height: 180px; border-radius: 50%; box-shadow: 0 0 40px rgba(197, 160, 89, 0.2); margin-bottom: 20px; }
-        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; }
+        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; margin-bottom: 20px; }
 
         /* SECTIONS */
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
@@ -32,14 +36,21 @@
         .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; }
         .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; }
+        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
+        .btn-gold:hover { background: #d4b47a; transform: translateY(-2px); }
+        
+        .footer-socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+        .footer-socials a { color: #666; font-size: 1.5rem; transition: 0.3s; }
+        .footer-socials a:hover { color: var(--gold); }
     </style>
 </head>
 <body id="top">
 
     <div class="social-sidebar">
-        <a href="https://t.me/yourlink" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://x.com/yourlink" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://x.com/DAEinitiative" class="sidebar-x" target="_blank" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8/" class="sidebar-li" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://opensea.io/profile?collectionSlugs=artefact-zero" class="sidebar-os" target="_blank" title="OpenSea"><i class="fa-solid fa-ship"></i></a>
     </div>
 
     <header class="top-bar">
@@ -62,6 +73,8 @@
         <div class="ca-box">
             <span style="color:var(--gold)">CONTRACT:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
         </div>
+        <br>
+        <a href="#" class="btn-gold">WHITEPAPER (COMING SOON)</a>
     </section>
 
     <section class="container" id="roadmap">
@@ -73,19 +86,21 @@
         </div>
     </section>
 
-    <section class="container" id="tokenomics">
-        <h2 class="section-title">Tokenomics</h2>
-        <div class="grid">
-            <div class="card"><h3>0% Tax</h3><p>0% Buy/Sell Tax for the community.</p></div>
-            <div class="card"><h3>Supply</h3><p>1 Billion DAEL Total Supply.</p></div>
-            <div class="card"><h3>Network</h3><p>Deployed on Polygon (High speed, Low fees).</p></div>
+    <footer style="text-align:center; padding:60px 20px; color:#444; border-top:1px solid #222;">
+        <div class="footer-socials">
+            <a href="https://t.me/daeinitiative" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            <a href="https://x.com/DAEinitiative" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://opensea.io/profile?collectionSlugs=artefact-zero" target="_blank"><i class="fa-solid fa-ship"></i></a>
         </div>
-    </section>
+        
+        <p style="font-size: 0.7rem; color: #555; max-width: 800px; margin: 25px auto; line-height: 1.5; font-style: italic;">
+            Disclaimer: DAEL is a utility token on the Polygon Network. Cryptocurrency investments are subject to high market risk. 
+            This website does not constitute financial advice. Always conduct your own research before participating in any crypto project.
+        </p>
 
-    <footer style="text-align:center; padding:60px 0; color:#444; border-top:1px solid #222;">
-        &copy; 2026 DAEL PROJECT | Hosted on <a href="https://daeinitiative.com" style="color: #666; text-decoration: none;">daeinitiative.com</a>
+        <p style="margin-top:20px;">&copy; 2026 DAEL PROJECT | Hosted on <a href="https://daeinitiative.com" style="color: #666; text-decoration: none;">daeinitiative.com</a></p>
     </footer>
 
 </body>
 </html>
-
