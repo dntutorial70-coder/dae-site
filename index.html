@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root { --gold: #c5a059; --bg: #0d1218; --card: #161b22; --cyan: #00f2ff; }
-        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; scroll-behavior: smooth; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; scroll-behavior: smooth; }
 
         /* SIDEBAR */
         .social-sidebar { position: fixed; left: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 9999; }
-        .social-sidebar a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.2rem; transition: 0.2s; border-radius: 0 4px 4px 0; margin-bottom: 2px; }
+        .social-sidebar a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.2rem; border-radius: 0 4px 4px 0; margin-bottom: 2px; }
         .sidebar-tg { background: #0088cc; } .sidebar-x { background: #000; border: 1px solid #333; }
-        .sidebar-in { background: #0077b5; } .sidebar-os { background: #2081e2; }
 
         /* HEADER */
         .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
@@ -24,96 +23,69 @@
         /* HERO */
         .hero { padding: 100px 20px; text-align: center; }
         .logo-main { width: 180px; height: 180px; border-radius: 50%; box-shadow: 0 0 40px rgba(197, 160, 89, 0.2); margin-bottom: 20px; }
-        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; cursor: pointer; }
+        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; }
 
         /* SECTIONS */
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
         .section-title { color: var(--gold); font-size: 2rem; text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: left; }
+        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; }
         .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        /* FORM */
-        input { width: 100%; padding: 15px; margin-bottom: 10px; background: #080a0d; border: 1px solid #333; color: white; border-radius: 5px; box-sizing: border-box; }
-        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; width: 100%; }
+        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; }
     </style>
 </head>
 <body id="top">
 
     <div class="social-sidebar">
-        <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://x.com/denis_de84848" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" class="sidebar-in" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://opensea.io/" class="sidebar-os" target="_blank"><i class="fa-solid fa-ship"></i></a>
+        <a href="https://t.me/yourlink" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://x.com/yourlink" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
 
     <header class="top-bar">
-        <a href="#top" style="display:flex; align-items:center; gap:10px; text-decoration:none; color:white;">
-            <img src="logo_dael.png" style="width:30px; border-radius:50%;" alt="DAEL Logo">
-            <span style="font-weight:bold;">DAEL PROJECT</span>
-        </a>
+        <div style="display:flex; align-items:center; gap:10px;">
+            <img src="logo_dael.png" style="width:30px; border-radius:50%;">
+            <span style="font-weight:bold; letter-spacing: 2px;">DAEL PROJECT</span>
+        </div>
         <nav class="nav-links">
             <a href="#top">HOME</a>
             <a href="#roadmap">ROADMAP</a>
             <a href="#tokenomics">TOKENOMICS</a>
-            <a href="#team">TEAM</a>
         </nav>
-        <a href="mailto:contact@daelproject.com" class="top-email">contact@daelproject.com</a>
+        <a href="mailto:contact@daeinitiative.com" class="top-email">contact@daeinitiative.com</a>
     </header>
 
     <section class="hero">
-        <img src="logo_dael.png" class="logo-main" alt="DAEL Large Logo">
-        <h1>DIGITAL ASSET <span style="color:var(--gold)">EXCHANGE LAYER</span></h1>
-        <p style="color: #888; max-width: 600px; margin: 0 auto;">Bridging the gap between digital assets and decentralized infrastructure on Polygon Network.</p>
+        <img src="logo_dael.png" class="logo-main">
+        <h1>DIGITAL ASSET <span style="color:var(--gold)">EXCHANGE LAYER</span> (DAEL)</h1>
+        <p style="color: #888; max-width: 600px; margin: 0 auto;">Official ecosystem for the DAEL token on Polygon Network.</p>
         <div class="ca-box">
-            <span style="color:var(--gold)">CA:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
+            <span style="color:var(--gold)">CONTRACT:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
         </div>
     </section>
 
     <section class="container" id="roadmap">
-        <h2 class="section-title">Roadmap</h2>
+        <h2 class="section-title">Project Roadmap</h2>
         <div class="grid">
-            <div class="card"><h3>Phase 1</h3><p>Community building, Social Media Launch, and initial Marketing push.</p></div>
-            <div class="card"><h3>Phase 2</h3><p>DEX Listing, CMC/CoinGecko applications, and influencer partnerships.</p></div>
-            <div class="card"><h3>Phase 3</h3><p>OpenSea NFT Drop, Governance platform launch, and CEX listings.</p></div>
+            <div class="card"><h3>Phase 1</h3><p>Community building, Site launch at daeinitiative.com, and initial Marketing push.</p></div>
+            <div class="card"><h3>Phase 2</h3><p>DEX Listing, CMC/CoinGecko applications, and PolygonScan verification.</p></div>
+            <div class="card"><h3>Phase 3</h3><p>Ecosystem expansion, NFT integration, and CEX listings.</p></div>
         </div>
     </section>
 
     <section class="container" id="tokenomics">
         <h2 class="section-title">Tokenomics</h2>
         <div class="grid">
-            <div class="card"><h3>0% Buy/Sell Tax</h3><p>Trade without fees on Polygon Network.</p></div>
-            <div class="card"><h3>1 Billion Supply</h3><p>Fixed total supply. No minting possible.</p></div>
-            <div class="card"><h3>Locked Liquidity</h3><p>Liquidity locked for 12 months via UNCX Network.</p></div>
-        </div>
-    </section>
-
-    <section class="container" id="team">
-        <h2 class="section-title">Core Team</h2>
-        <div style="display: flex; justify-content: center;">
-            <div class="card" style="max-width: 400px; text-align: center;">
-                <img src="https://ui-avatars.com/api/?name=Denis+Nicolae&background=c5a059&color=fff" style="border-radius: 50%; width: 80px; margin-bottom: 15px;">
-                <h3>Denis Nicolae</h3>
-                <p>Founder & Lead Developer</p>
-                <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8" target="_blank" style="color: var(--cyan); text-decoration: none;">View LinkedIn Profile</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="container" id="whitelist">
-        <h2 class="section-title">Get in Touch</h2>
-        <div style="max-width:500px; margin:0 auto; background:var(--card); padding:40px; border-radius:12px; border:1px solid #333;">
-            <form>
-                <input type="email" placeholder="Your Email Address" required>
-                <input type="text" placeholder="Polygon Wallet (0x...)" required>
-                <button type="submit" class="btn-gold">SUBMIT APPLICATION</button>
-            </form>
+            <div class="card"><h3>0% Tax</h3><p>0% Buy/Sell Tax for the community.</p></div>
+            <div class="card"><h3>Supply</h3><p>1 Billion DAEL Total Supply.</p></div>
+            <div class="card"><h3>Network</h3><p>Deployed on Polygon (High speed, Low fees).</p></div>
         </div>
     </section>
 
     <footer style="text-align:center; padding:60px 0; color:#444; border-top:1px solid #222;">
-        &copy; 2026 DAEL PROJECT. All rights reserved.
+        &copy; 2026 DAEL PROJECT | Hosted on <a href="https://daeinitiative.com" style="color: #666; text-decoration: none;">daeinitiative.com</a>
     </footer>
 
 </body>
 </html>
+
