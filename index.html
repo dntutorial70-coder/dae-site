@@ -30,7 +30,6 @@
         .logo-main { width: 220px; height: 220px; border-radius: 50%; border: 2px solid var(--secondary); box-shadow: 0 0 50px rgba(153, 69, 255, 0.3); margin-bottom: 20px; }
         h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; letter-spacing: 5px; }
         
-        /* CA BOX ACTUALIZAT */
         .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid var(--primary); display: inline-block; font-family: monospace; margin: 20px 0; color: var(--secondary); position: relative; }
         .copy-btn { background: var(--primary); color: white; border: none; padding: 5px 10px; margin-left: 10px; border-radius: 4px; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; transition: 0.3s; }
         .copy-btn:hover { background: var(--secondary); color: black; }
@@ -50,7 +49,6 @@
 </head>
 <body id="top">
 
-    <!-- Social Sidebar -->
     <div class="social-sidebar">
         <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
         <a href="https://x.com/DAEinitiative" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -76,7 +74,6 @@
         <h1>NEXUS <span style="color:var(--secondary)">NETWORK</span></h1>
         <p style="color: #888; max-width: 600px; margin: 0 auto;">The premier connectivity and exchange layer on Solana.</p>
         
-        <!-- Contract Address Section Actualizată -->
         <div class="ca-box">
             <span style="color:var(--primary)">CONTRACT (SOL):</span> 
             <span id="ca-text">4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump</span>
@@ -84,7 +81,6 @@
         </div>
         
         <br><br>
-        <!-- Link actualizat către Pump.fun -->
         <a href="https://pump.fun/coin/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="btn-main">BUY ON PUMP.FUN</a>
     </section>
 
@@ -100,20 +96,32 @@
     <section class="container" id="tokenomics">
         <h2 class="section-title">Tokenomics</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Tax</h3>
-                <span class="stat-value">0%</span>
-                <p>Pure community ownership. No hidden fees.</p>
-            </div>
-            <div class="card">
-                <h3>Supply</h3>
-                <span class="stat-value">1B</span>
-                <p>Total NEXUS tokens on Solana.</p>
-            </div>
-            <div class="card">
-                <h3>Network</h3>
-                <span class="stat-value">SOLANA</span>
-                <p>Ultra-fast and low-cost transactions.</p>
+            <div class="card"><h3>Tax</h3><span class="stat-value">0%</span><p>Pure community ownership.</p></div>
+            <div class="card"><h3>Supply</h3><span class="stat-value">1B</span><p>Total NEXUS tokens.</p></div>
+            <div class="card"><h3>Network</h3><span class="stat-value">SOLANA</span><p>Ultra-fast transactions.</p></div>
+        </div>
+    </section>
+
+    <!-- Noua Secțiune de Utilitate: Burn Mechanism -->
+    <section class="container" id="burn-mechanism" style="background: linear-gradient(180deg, #050505 0%, #111 100%);">
+        <h2 class="section-title">NEXUS BURN MECHANISM</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; border: 1px solid var(--secondary); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(20, 241, 149, 0.1);">
+            <i class="fa-solid fa-fire-flame-curved" style="font-size: 3rem; color: #ff4d4d; margin-bottom: 20px;"></i>
+            <h3 style="font-family: 'Orbitron', sans-serif; color: white;">100% Creator Rewards Reinvestment</h3>
+            <p style="color: #bbb; line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px;">
+                <strong>Nu păstrăm profitul.</strong> Folosim toate recompensele de creator pentru a cumpăra 
+                <span style="color: var(--secondary);">$NXS</span> înapoi din piață și pentru a-i arde, eliminându-i permanent din circulație.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; min-width: 120px; border: 1px solid #333;">
+                    <span style="display: block; color: var(--primary); font-weight: bold;">BUY-BACK</span>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; min-width: 120px; border: 1px solid #333;">
+                    <span style="display: block; color: #ff4d4d; font-weight: bold;">BURN</span>
+                </div>
+                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; min-width: 120px; border: 1px solid #333;">
+                    <span style="display: block; color: var(--secondary); font-weight: bold;">MOON</span>
+                </div>
             </div>
         </div>
     </section>
@@ -122,7 +130,6 @@
         <p>&copy; 2026 NEXUS PROJECT | Built on Solana</p>
     </footer>
 
-    <!-- Script pentru copiere contract -->
     <script>
         function copyCA() {
             const caText = document.getElementById('ca-text').innerText;
@@ -133,6 +140,5 @@
             });
         }
     </script>
-
 </body>
 </html>
