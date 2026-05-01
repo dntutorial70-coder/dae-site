@@ -3,92 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAEL PROJECT | Official Ecosystem</title>
+    <title>NEXUS | Solana Network Ecosystem</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #c5a059; --bg: #0d1218; --card: #161b22; --cyan: #00f2ff; }
+        :root { --primary: #9945FF; --secondary: #14F195; --bg: #050505; --card: #111; }
         body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: white; scroll-behavior: smooth; }
 
-        /* SIDEBAR */
+        /* SIDEBAR - Păstrat și actualizat */
         .social-sidebar { position: fixed; left: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; z-index: 9999; }
         .social-sidebar a { width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1.2rem; border-radius: 0 4px 4px 0; margin-bottom: 2px; transition: 0.3s; }
         .sidebar-tg { background: #0088cc; } 
         .sidebar-x { background: #000; border: 1px solid #333; }
         .sidebar-li { background: #0077b5; }
         .sidebar-os { background: #2081e2; }
-        .social-sidebar a:hover { transform: translateX(5px); opacity: 0.9; }
+        .social-sidebar a:hover { transform: translateX(5px); box-shadow: 0 0 15px var(--primary); }
 
         /* HEADER */
-        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
-        .nav-links a { color: #888; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin: 0 15px; }
-        .nav-links a:hover { color: var(--gold); }
-        .top-email { color: var(--cyan); font-family: monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid #333; padding: 8px 15px; border-radius: 4px; }
+        .top-bar { display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: rgba(0,0,0,0.9); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #222; }
+        .nav-links a { color: #888; text-decoration: none; font-size: 0.75rem; font-weight: bold; text-transform: uppercase; margin: 0 15px; font-family: 'Orbitron', sans-serif; }
+        .nav-links a:hover { color: var(--secondary); }
+        .top-email { color: var(--secondary); font-family: monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid #333; padding: 8px 15px; border-radius: 4px; }
 
         /* HERO */
-        .hero { padding: 100px 20px; text-align: center; }
-        .logo-main { width: 180px; height: 180px; border-radius: 50%; box-shadow: 0 0 40px rgba(197, 160, 89, 0.2); margin-bottom: 20px; }
-        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid #333; display: inline-block; font-family: monospace; margin-top: 20px; margin-bottom: 20px; }
+        .hero { padding: 100px 20px; text-align: center; position: relative; }
+        .logo-main { width: 220px; height: 220px; border-radius: 50%; border: 2px solid var(--secondary); box-shadow: 0 0 50px rgba(153, 69, 255, 0.3); margin-bottom: 20px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; letter-spacing: 5px; }
+        .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid var(--primary); display: inline-block; font-family: monospace; margin: 20px 0; color: var(--secondary); }
 
         /* SECTIONS */
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
-        .section-title { color: var(--gold); font-size: 2rem; text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 3px; }
+        .section-title { color: var(--secondary); font-family: 'Orbitron', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 50px; letter-spacing: 3px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: center; }
-        .card h3 { color: var(--gold); margin-top: 0; border-bottom: 1px solid #333; padding-bottom: 10px; font-size: 1.5rem; }
-        .stat-value { display: block; font-size: 2rem; font-weight: bold; color: white; margin: 10px 0; }
+        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: center; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card h3 { color: var(--primary); font-family: 'Orbitron', sans-serif; margin-top: 0; }
+        .stat-value { display: block; font-size: 2.2rem; font-weight: bold; color: var(--secondary); margin: 10px 0; }
 
-        /* WHITELIST */
-        .whitelist-box { background: linear-gradient(145deg, #161b22, #0d1218); padding: 40px; border-radius: 15px; border: 1px solid var(--gold); max-width: 600px; margin: 0 auto; text-align: center; }
-        .whitelist-input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; color: white; border-radius: 4px; box-sizing: border-box; }
-
-        .btn-gold { background: var(--gold); color: black; border: none; padding: 12px 30px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: 0.3s; }
-        .btn-gold:hover { background: #d4b47a; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3); }
-        
-        .footer-socials { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
-        .footer-socials a { color: #666; font-size: 1.5rem; transition: 0.3s; }
-        .footer-socials a:hover { color: var(--gold); }
+        .btn-main { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: black; border: none; padding: 15px 40px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; font-family: 'Orbitron', sans-serif; }
     </style>
 </head>
 <body id="top">
 
+    <!-- Social Sidebar cu linkurile tale originale -->
     <div class="social-sidebar">
-        <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-        <a href="https://x.com/DAEinitiative" class="sidebar-x" target="_blank" title="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8/" class="sidebar-li" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://opensea.io/profile?collectionSlugs=artefact-zero" class="sidebar-os" target="_blank" title="OpenSea"><i class="fa-solid fa-ship"></i></a>
+        <a href="https://t.me/daeinitiative" class="sidebar-tg" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://x.com/DAEinitiative" class="sidebar-x" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8/" class="sidebar-li" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://opensea.io/profile?collectionSlugs=artefact-zero" class="sidebar-os" target="_blank"><i class="fa-solid fa-ship"></i></a>
     </div>
 
     <header class="top-bar">
         <div style="display:flex; align-items:center; gap:10px;">
-            <img src="logo_dael.png" style="width:30px; border-radius:50%;">
-            <span style="font-weight:bold; letter-spacing: 2px;">DAEL PROJECT</span>
+            <img src="logo_nexus..png" style="width:35px; border-radius:50%; border: 1px solid var(--secondary);">
+            <span style="font-family: 'Orbitron', sans-serif; font-weight:bold; letter-spacing: 2px;">NEXUS</span>
         </div>
         <nav class="nav-links">
             <a href="#top">HOME</a>
             <a href="#roadmap">ROADMAP</a>
             <a href="#tokenomics">TOKENOMICS</a>
-            <a href="#whitelist">WHITELIST</a>
         </nav>
         <a href="mailto:contact@daeinitiative.com" class="top-email">contact@daeinitiative.com</a>
     </header>
 
     <section class="hero">
-        <img src="logo_dael.png" class="logo-main">
-        <h1>DIGITAL ASSET <span style="color:var(--gold)">EXCHANGE LAYER</span> (DAEL)</h1>
-        <p style="color: #888; max-width: 600px; margin: 0 auto;">Official ecosystem for the DAEL token on Polygon Network.</p>
+        <img src="logo_nexus..png" class="logo-main">
+        <h1>NEXUS <span style="color:var(--secondary)">NETWORK</span></h1>
+        <p style="color: #888; max-width: 600px; margin: 0 auto;">The premier connectivity and exchange layer on Solana.</p>
         <div class="ca-box">
-            <span style="color:var(--gold)">CONTRACT:</span> 0x5876f0cb366f1b61e8797470996e76da4420676f
+            <span style="color:var(--primary)">CONTRACT (SOL):</span> Coming Soon
         </div>
-        <br>
-        <a href="#" class="btn-gold">WHITEPAPER (COMING SOON)</a>
+        <br><br>
+        <a href="https://pump.fun" class="btn-main">BUY ON PUMP.FUN</a>
     </section>
 
     <section class="container" id="roadmap">
-        <h2 class="section-title">Project Roadmap</h2>
+        <h2 class="section-title">Roadmap</h2>
         <div class="grid">
-            <div class="card"><h3>Phase 1</h3><p>Community building, Site launch, and initial Marketing push.</p></div>
-            <div class="card"><h3>Phase 2</h3><p>DEX Listing, CMC/CoinGecko applications, and PolygonScan verification.</p></div>
-            <div class="card"><h3>Phase 3</h3><p>Ecosystem expansion, NFT integration, and CEX listings.</p></div>
+            <div class="card"><h3>Phase 1</h3><p>Rebranding to NEXUS, Solana integration, and community migration.</p></div>
+            <div class="card"><h3>Phase 2</h3><p>Pump.fun launch, Raydium listing, and aggressive marketing.</p></div>
+            <div class="card"><h3>Phase 3</h3><p>Nexus Dashboard release and ecosystem partnerships.</p></div>
         </div>
     </section>
 
@@ -98,48 +92,23 @@
             <div class="card">
                 <h3>Tax</h3>
                 <span class="stat-value">0%</span>
-                <p>Buy/Sell Tax. Total community freedom.</p>
+                <p>Pure community ownership. No hidden fees.</p>
             </div>
             <div class="card">
-                <h3>Total Supply</h3>
-                <span class="stat-value">1,000,000,000</span>
-                <p>DAEL Total Supply on Polygon.</p>
+                <h3>Supply</h3>
+                <span class="stat-value">1B</span>
+                <p>Total NEXUS tokens on Solana.</p>
             </div>
             <div class="card">
                 <h3>Network</h3>
-                <span class="stat-value">POLYGON</span>
-                <p>Fast, Secure, and Scalable layer.</p>
+                <span class="stat-value">SOLANA</span>
+                <p>Ultra-fast and low-cost transactions.</p>
             </div>
-        </div>
-    </section>
-
-    <section class="container" id="whitelist">
-        <h2 class="section-title">Join the Whitelist</h2>
-        <div class="whitelist-box">
-            <p>Get exclusive access and stay updated on our launch.</p>
-            <form action="mailto:contact@daeinitiative.com" method="post" enctype="text/plain">
-                <input type="text" name="Name" class="whitelist-input" placeholder="Your Name" required>
-                <input type="email" name="Email" class="whitelist-input" placeholder="Your Email Address" required>
-                <input type="text" name="Wallet" class="whitelist-input" placeholder="Polygon Wallet Address (0x...)">
-                <button type="submit" class="btn-gold" style="margin-top:15px; width:100%;">APPLY FOR WHITELIST</button>
-            </form>
         </div>
     </section>
 
     <footer style="text-align:center; padding:60px 20px; color:#444; border-top:1px solid #222;">
-        <div class="footer-socials">
-            <a href="https://t.me/daeinitiative" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-            <a href="https://x.com/DAEinitiative" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/denis-nicolae-4426023b8/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://opensea.io/profile?collectionSlugs=artefact-zero" target="_blank"><i class="fa-solid fa-ship"></i></a>
-        </div>
-        
-        <p style="font-size: 0.7rem; color: #555; max-width: 800px; margin: 25px auto; line-height: 1.5; font-style: italic;">
-            Disclaimer: DAEL is a utility token. Cryptocurrency investments are subject to market risk. 
-            This website does not constitute financial advice. Always conduct your own research.
-        </p>
-
-        <p style="margin-top:20px;">&copy; 2026 DAEL PROJECT | Hosted on <a href="https://daeinitiative.com" style="color: #666; text-decoration: none;">daeinitiative.com</a></p>
+        <p>&copy; 2026 NEXUS PROJECT | Built on Solana</p>
     </footer>
 
 </body>
