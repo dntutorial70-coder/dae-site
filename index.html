@@ -28,35 +28,28 @@
         /* HERO */
         .hero { padding: 100px 20px; text-align: center; position: relative; }
         .logo-main { width: 220px; height: 220px; border-radius: 50%; border: 2px solid var(--secondary); box-shadow: 0 0 50px rgba(153, 69, 255, 0.3); margin-bottom: 20px; }
-        h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; letter-spacing: 5px; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 3.5rem; letter-spacing: 5px; margin: 10px 0; }
         
         .ca-box { background: var(--card); padding: 15px; border-radius: 8px; border: 1px solid var(--primary); display: inline-block; font-family: monospace; margin: 20px 0; color: var(--secondary); position: relative; }
         .copy-btn { background: var(--primary); color: white; border: none; padding: 5px 10px; margin-left: 10px; border-radius: 4px; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; transition: 0.3s; }
         .copy-btn:hover { background: var(--secondary); color: black; }
 
-        /* JUPITER TERMINAL STYLING (IFRAME ADAPTATION) */
-        #nexus-terminal-container {
-            max-width: 440px;
-            margin: 40px auto;
-            border: 1px solid var(--primary);
-            border-radius: 16px;
-            overflow: hidden; /* Important pentru rotunjirea colțurilor iframe-ului */
-            height: 550px;
-            background: rgba(17, 17, 17, 0.8);
-            box-shadow: 0 0 30px rgba(153, 69, 255, 0.2);
-        }
+        /* NEW ECOSYSTEM GRID (REPLACING TERMINAL) */
+        .eco-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; max-width: 900px; margin: 40px auto; }
+        .eco-link { background: #111; border: 1px solid #222; padding: 20px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+        .eco-link:hover { border-color: var(--secondary); background: #1a1a1a; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(20, 241, 149, 0.1); }
+        .eco-link i { font-size: 1.5rem; color: var(--primary); }
+        .eco-link span { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 1px; }
 
         /* SECTIONS */
         .container { max-width: 1100px; margin: 0 auto; padding: 80px 20px; border-top: 1px solid #222; }
-        .section-title { color: var(--secondary); font-family: 'Orbitron', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 50px; letter-spacing: 3px; line-height: 1.2; }
+        .section-title { color: var(--secondary); font-family: 'Orbitron', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 50px; letter-spacing: 3px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: center; transition: 0.3s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card h3 { color: var(--primary); font-family: 'Orbitron', sans-serif; margin-top: 0; }
+        .card { background: var(--card); padding: 35px; border-radius: 12px; border: 1px solid #222; text-align: center; }
         .stat-value { display: block; font-size: 2.2rem; font-weight: bold; color: var(--secondary); margin: 10px 0; }
 
-        .btn-main { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: black; border: none; padding: 15px 40px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; font-family: 'Orbitron', sans-serif; transition: 0.3s; }
-        .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(20, 241, 149, 0.4); }
+        .btn-main { background: linear-gradient(90deg, var(--primary), var(--secondary)); color: black; border: none; padding: 18px 45px; font-weight: bold; cursor: pointer; border-radius: 4px; text-transform: uppercase; text-decoration: none; display: inline-block; font-family: 'Orbitron', sans-serif; transition: 0.3s; font-size: 1.1rem; }
+        .btn-main:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(20, 241, 149, 0.5); }
     </style>
 </head>
 <body id="top">
@@ -84,30 +77,39 @@
     <section class="hero">
         <img src="logo_nexus.png" class="logo-main">
         <h1>NEXUS <span style="color:var(--secondary)">NETWORK</span></h1>
-        <p style="color: #888; max-width: 600px; margin: 0 auto;">The premier connectivity and exchange layer on Solana.</p>
+        <p style="color: #888; max-width: 600px; margin: 0 auto; font-size: 1.1rem;">The premier connectivity and exchange layer on Solana.</p>
         
         <div class="ca-box">
-            <span style="color:var(--primary)">CONTRACT (SOL):</span> 
+            <span style="color:var(--primary)">CONTRACT:</span> 
             <span id="ca-text">4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump</span>
             <button class="copy-btn" onclick="copyCA()">COPY</button>
         </div>
         
         <br><br>
-        <a href="https://pump.fun/coin/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="btn-main">BUY ON PUMP.FUN</a>
+        <a href="https://pump.fun/coin/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="btn-main">TRADE ON PUMP.FUN</a>
 
-        <!-- JUPITER TERMINAL (STABLE IFRAME VERSION) -->
-        <div id="nexus-terminal-container">
-            <iframe 
-                src="https://jup.ag/swap/SOL-4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" 
-                width="100%" 
-                height="100%" 
-                style="border: none;"
-                title="Nexus Swap">
-            </iframe>
+        <!-- NEW ECOSYSTEM QUICK LINKS -->
+        <div class="eco-grid">
+            <a href="https://jup.ag/swap/SOL-4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="eco-link">
+                <i class="fa-solid fa-rocket"></i>
+                <span>JUPITER AG</span>
+            </a>
+            <a href="https://dexscreener.com/solana/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="eco-link">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>DEXSCREENER</span>
+            </a>
+            <a href="https://birdeye.so/token/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump?chain=solana" target="_blank" class="eco-link">
+                <i class="fa-solid fa-eye"></i>
+                <span>BIRDEYE</span>
+            </a>
+            <a href="https://solscan.io/token/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="eco-link">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <span>SOLSCAN</span>
+            </a>
         </div>
     </section>
 
-    <!-- ROADMAP SECTION -->
+    <!-- ROADMAP -->
     <section class="container" id="roadmap">
         <h2 class="section-title">Roadmap</h2>
         <div class="grid">
@@ -117,7 +119,7 @@
         </div>
     </section>
 
-    <!-- TOKENOMICS SECTION -->
+    <!-- TOKENOMICS -->
     <section class="container" id="tokenomics">
         <h2 class="section-title">Tokenomics</h2>
         <div class="grid">
@@ -127,29 +129,18 @@
         </div>
     </section>
 
-    <!-- BURN MECHANISM SECTION (CORE UTILITY) -->
+    <!-- BURN MECHANISM -->
     <section class="container" id="burn-mechanism" style="background: linear-gradient(180deg, #050505 0%, #111 100%);">
         <h2 class="section-title">
             <span style="font-size: 0.9rem; display: block; color: var(--primary); letter-spacing: 5px; margin-bottom: 10px;">CORE UTILITY</span>
             NEXUS BURN MECHANISM
         </h2>
-        <div style="max-width: 800px; margin: 0 auto; text-align: center; border: 1px solid var(--secondary); padding: 40px; border-radius: 20px; box-shadow: 0 0 30px rgba(20, 241, 149, 0.1);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; border: 1px solid var(--secondary); padding: 40px; border-radius: 20px;">
             <i class="fa-solid fa-fire-flame-curved" style="font-size: 3rem; color: #ff4d4d; margin-bottom: 20px;"></i>
-            <h3 style="font-family: 'Orbitron', sans-serif; color: white;">100% Creator Rewards Reinvestment</h3>
+            <h3 style="font-family: 'Orbitron', sans-serif;">100% Creator Rewards Reinvestment</h3>
             <p style="color: #bbb; line-height: 1.6; font-size: 1.1rem; margin-bottom: 30px;">
-                <strong>We don't keep the profit.</strong> Every reward generated from NEXUS trading volume on Pump.fun is strategically reinvested. We use 100% of creator rewards to buy back <span style="color: var(--secondary);">$NXS</span> and burn them permanently.
+                Every reward generated from NEXUS trading volume is used to buy back and burn $NXS.
             </p>
-            <div style="display: flex; justify-content: center; gap: 20px;">
-                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; flex: 1; border: 1px solid #333;">
-                    <span style="display: block; color: var(--primary); font-weight: bold; font-family: 'Orbitron';">BUY-BACK</span>
-                </div>
-                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; flex: 1; border: 1px solid #333;">
-                    <span style="display: block; color: #ff4d4d; font-weight: bold; font-family: 'Orbitron';">BURN</span>
-                </div>
-                <div style="background: #1a1a1a; padding: 15px; border-radius: 10px; flex: 1; border: 1px solid #333;">
-                    <span style="display: block; color: var(--secondary); font-weight: bold; font-family: 'Orbitron';">MOON</span>
-                </div>
-            </div>
         </div>
     </section>
 
