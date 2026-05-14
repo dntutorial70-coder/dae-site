@@ -34,13 +34,14 @@
         .copy-btn { background: var(--primary); color: white; border: none; padding: 5px 10px; margin-left: 10px; border-radius: 4px; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 0.7rem; transition: 0.3s; }
         .copy-btn:hover { background: var(--secondary); color: black; }
 
-        /* JUPITER TERMINAL STYLING */
+        /* JUPITER TERMINAL STYLING (IFRAME ADAPTATION) */
         #nexus-terminal-container {
             max-width: 440px;
             margin: 40px auto;
             border: 1px solid var(--primary);
             border-radius: 16px;
-            padding: 10px;
+            overflow: hidden; /* Important pentru rotunjirea colțurilor iframe-ului */
+            height: 550px;
             background: rgba(17, 17, 17, 0.8);
             box-shadow: 0 0 30px rgba(153, 69, 255, 0.2);
         }
@@ -94,11 +95,16 @@
         <br><br>
         <a href="https://pump.fun/coin/4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" target="_blank" class="btn-main">BUY ON PUMP.FUN</a>
 
-        <!-- JUPITER TERMINAL START -->
+        <!-- JUPITER TERMINAL (STABLE IFRAME VERSION) -->
         <div id="nexus-terminal-container">
-            <div id="integrated-terminal"></div>
+            <iframe 
+                src="https://jup.ag/swap/SOL-4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump" 
+                width="100%" 
+                height="100%" 
+                style="border: none;"
+                title="Nexus Swap">
+            </iframe>
         </div>
-        <!-- JUPITER TERMINAL END -->
     </section>
 
     <!-- ROADMAP SECTION -->
@@ -151,7 +157,6 @@
         <p>&copy; 2026 NEXUS PROJECT | Built on Solana</p>
     </footer>
 
-    <script src="https://terminal.jup.ag/main-v2.js"></script>
     <script>
         function copyCA() {
             const caText = document.getElementById('ca-text').innerText;
@@ -161,27 +166,6 @@
                 setTimeout(() => { btn.innerText = 'COPY'; }, 2000);
             });
         }
-
-        // INITIALIZE JUPITER TERMINAL
-       window.Jupiter.init({
-    displayMode: "integrated",
-    integratedTargetId: "integrated-terminal",
-    // "https://solana-mainnet.rpc.extnode.com",
-    // Jupiter va încerca acum să folosească nodurile lor interne
-    strictTokenList: false,
-    formProps: {
-        fixedOutputMint: true,
-        initialOutputMint: "4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump",
-    },
-    theme: "dark",
-    customTheme: {
-        palette: {
-            primary: "#14F195",
-            base: "#111111",
-            surface: "#1a1a1a",
-        },
-    },
-});
     </script>
 </body>
 </html>
