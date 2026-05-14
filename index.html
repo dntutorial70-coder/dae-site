@@ -163,24 +163,25 @@
         }
 
         // INITIALIZE JUPITER TERMINAL
-        window.Jupiter.init({
-            displayMode: "integrated",
-            integratedTargetId: "integrated-terminal",
-            endpoint: "https://solana-mainnet.rpc.extnode.com",
-            strictTokenList: false,
-            formProps: {
-                fixedOutputMint: true,
-                initialOutputMint: "4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump",
-            },
-            theme: "dark",
-            customTheme: {
-                palette: {
-                    primary: "#14F195",
-                    base: "#111111",
-                    surface: "#1a1a1a",
-                },
-            },
-        });
+       window.Jupiter.init({
+    displayMode: "integrated",
+    integratedTargetId: "integrated-terminal",
+    // Am scos endpoint-ul oficial care dă eroare în image_a3edf3.png
+    // Jupiter va încerca acum să folosească nodurile lor interne
+    strictTokenList: false,
+    formProps: {
+        fixedOutputMint: true,
+        initialOutputMint: "4sNfeQVic4PohXBhgkYFVxwmciAfxFCTfgdWE9Hbpump",
+    },
+    theme: "dark",
+    customTheme: {
+        palette: {
+            primary: "#14F195",
+            base: "#111111",
+            surface: "#1a1a1a",
+        },
+    },
+});
     </script>
 </body>
 </html>
